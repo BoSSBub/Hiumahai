@@ -1,0 +1,99 @@
+/* Styles for the container */
+.All-brand-list-container {
+    padding: 20px;
+    background-color: #FFE7FB;
+    text-align: center;
+  }
+  
+  .All-brand-title {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    
+    margin-bottom: 20px;
+  }
+  
+  /* Define grid layout with 5 columns */
+  .All-brand-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 50px; /* Horizontal gap (reduce space between columns) */
+    grid-row-gap: 20px;    /* Vertical gap (maintain original vertical spacing) */
+    justify-items: center;
+}
+
+  
+  /* Define the appearance of each brand item */
+  .All-brand-item {
+    width: 120px;
+    text-align: center;
+  }
+  
+  .All-brand-name {
+    margin-top: 10px;
+    margin-right: 26px;
+    font-size: 1.1em;
+    color: #555;
+    background-color: #FFE7FB;
+    font-weight: 600;
+  }
+  
+  /* Image container styling */
+  .brand-image-container {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    background-color: white;
+  }
+  
+  .brand-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  
+  /* Placeholder for missing images */
+  .brand-placeholder {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    color: #777;
+    font-size: 0.9em;
+    border: 1px solid #ccc;
+  }
+  /* Back Button */
+/* Back Button Image */
+.back-button-container {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .back-button-image {
+    width: 35px;
+    height: auto;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s ease;
+    right: 150px;
+    top: 30px;
+  }
+  
+  .back-button-image:hover {
+    transform: scale(1.1); /* Add a hover effect */
+  }
+  .main{
+    position: relative;
+    top: -55px;
+  }
+  
+  
+  

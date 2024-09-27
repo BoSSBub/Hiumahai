@@ -1,0 +1,108 @@
+/* การ์ดสินค้า */
+.Advise-card {
+  display: flex;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 20px 0;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border: 5px solid #ffd6f4; /* เพิ่มกรอบหนาสีชมพู */
+}
+
+/* ส่วนของรูปภาพ */
+.Advise-image-section {
+  position: relative;
+  width: 50%;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.Advise-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* ป้ายราคา */
+.Advise-price {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #e60000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* ข้อมูลสินค้า */
+.Advise-info-section {
+  padding: 20px;
+  width: 50%;
+  color: black;
+  background-color: #ffeaff; /* สีพื้นหลังอ่อน */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  border-left: 5px solid #ffd6f4;
+}
+
+/* ชื่อสินค้า */
+.Advise-info-section h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* คำอธิบายสินค้า */
+.Advise-info-section p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* ส่วนของแบรนด์ */
+.Advise-brand-section {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+
+.Advise-logo {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.Advise-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #666;
+  text-align: right;
+}
+
+/* สำหรับการ์ดรวม */
+.advise-product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* เพิ่มกรอบและการจัดตำแหน่ง */
+.Advise-image-section, .Advise-info-section {
+  border-radius: 10px;
+}
+

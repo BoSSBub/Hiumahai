@@ -1,0 +1,59 @@
+.main-promotion {
+    padding: 20px;
+  }
+  
+  .main-promotion h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 40px;
+    color: #333;
+  }
+  
+  .promotion-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px; /* Space between cards */
+  }
+  
+  .promotion-card {
+    background-color: #FFE7FB; /* Light pink */
+    border-radius: 15px; /* Add more border-radius for a smoother curve */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    text-align: center;
+    transition: transform 0.3s ease; /* Add smooth hover effect */
+  }
+  
+  .promotion-card:hover {
+    transform: scale(1.02); /* Slightly enlarge card on hover */
+  }
+  
+  .promotion-card img {
+    width: 90%;
+    margin: 10px;
+    height: auto;
+    border-radius: 10px; /* Add rounded corners to images */
+  }
+  
+  .promotion-info {
+    padding: 15px;
+  }
+  
+  .promotion-info h2 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #000000;
+  }
+  
+  .promotion-info p {
+    font-size: 14px;
+    color: #333;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .promotion-grid {
+      grid-template-columns: 1fr; /* 1 column for smaller screens */
+    }
+  }
+  
