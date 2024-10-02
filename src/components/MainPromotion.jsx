@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import './MainPromotion.css'; // Make sure to have your CSS in place
+import { Link } from 'react-router-dom'; // To create links between pages
+import './MainPromotion.css'; // Ensure your CSS is in place
 
 const MainPromotion = () => {
   const [promotions, setPromotions] = useState([]); // To store promotions data
@@ -25,22 +26,25 @@ const MainPromotion = () => {
   if (loading) {
     return <div>Loading...</div>; // Show loading indicator while data is being fetched
   }
-
+console.log(promotions);
   return (
     <div className="main-promotion">
       <h2>โปรโมชั่น</h2>
       <div className="promotion-grid">
         {promotions.map((promotion) => (
-          <div key={promotion.imgpt_id} className="promotion-card">
-            {/* Render the image using base64 string */}
-            <img 
-              src={`data:image/jpeg;base64,${promotion.imgpt_img}`} 
-              alt={promotion.imgpt_name} 
-              className="promotion-image" 
-            />
-            <div className="promotion-info">
-              <h2>{promotion.imgpt_detail}</h2>
-            </div>
+          <div key={promotion.product_id} className="promotion-card">
+            {/* Link to the product details page */}
+            <Link to={`/brands/${promotion.brand_id}`}>
+              {/* Render the image using base64 string */}
+              <img 
+                src={`data:image/jpeg;base64,${promotion.imgpt_img}`} 
+                alt={promotion.imgpt_name} 
+                className="promotion-image" 
+              />
+              <div className="promotion-info">
+                <h2>{promotion.imgpt_detail}</h2>
+              </div>
+            </Link>
           </div>
         ))}
       </div>

@@ -1,0 +1,271 @@
+.productDetail-detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  margin-top: -96px;
+  width: 350px;
+  padding: 20px;
+}
+
+.productDetail-image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.productDetail-image {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 8p;
+}
+
+.productDetail-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.productDetail-info-1 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  margin-left: -21px;
+  margin-top: -5px;
+}
+
+.brandDetail-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.brandDetail-name {
+  font-size: 25px;
+  font-weight: bold;
+  color: #444444;
+  margin-left: 10px;
+}
+
+.productDetail-info-2 {
+  display: flex;
+  width: 420px;
+  background-color: #D6E7FF;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  justify-content : space-around;
+}
+
+.productDetail-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #222222;
+}
+
+.productDetail-price {
+  font-size: 22px;
+  color: #ff4d4d;
+  margin-top: 14px;
+  margin-left: 27px;
+}
+
+.error-message {
+  color: red;
+  font-size: 16px;
+}
+
+.detail-box-container {
+    display: flex;
+    justify-content: space-between;
+    width: 250%;
+    margin-top: 20px;
+}
+
+.detail-box {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 8px;
+  width: 45%;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.detail-box h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.detail-box p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #666;
+}
+.product-options {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .product-options h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #222;
+  }
+  
+  .product-options-select {
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    width: 100%;
+    background-color: #f0f0f0;
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    appearance: none; /* ทำให้ dropdown ดูเรียบง่าย */
+  }
+  
+  .product-options-select:hover {
+    border-color: #888;
+  }
+  
+  .product-options-select:focus {
+    outline: none;
+    border-color: #ff4d4d;
+    box-shadow: 0 0 5px rgba(255, 77, 77, 0.5);
+  }
+  .user-select {
+    margin-top: 10px;
+    padding: 5px;
+    width: 100%;
+  }
+  
+  .user-detail-card {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .user-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .user-info p {
+    margin: 0;
+  }
+  .selected-user-info {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .selected-user-image {
+    width: 50px; /* Set to your desired size */
+    height: 50px;
+    border-radius: 50%; /* To make it circular */
+    margin-right: 10px;
+  }
+/* From Uiverse.io by adamgiebl */ 
+.iconbutton101 {
+  font-family: inherit;
+  font-size: 20px;
+  background: royalblue;
+  color: rgb(0, 0, 0);
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+  background-color: #CBBDFF;
+}
+
+.iconbutton101 span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+.iconbutton101 svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.iconbutton101:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.iconbutton101:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+.iconbutton101:hover span {
+  transform: translateX(5em);
+}
+
+.biconbutton101utton:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+    
+  /* From Uiverse.io by Madflows */ 
+.iconbutton102 {
+  position: relative;
+  overflow: hidden;
+  height: 3rem;
+  padding: 0 2rem;
+  border-radius: 1.5rem;
+  background: #3d3a4e;
+  background-size: 400%;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.iconbutton102:hover::before {
+  transform: scaleX(1);
+}
+
+.iconbutton102-content {
+  position: relative;
+  z-index: 1;
+}
+
+.iconbutton102::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(
+    82.3deg,
+    rgba(150, 93, 233, 1) 10.8%,
+    rgba(99, 88, 238, 1) 94.3%
+  );
+  transition: all 0.475s;
+}

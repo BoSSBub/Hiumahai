@@ -99,15 +99,17 @@ const BrandDetail = () => {
       
       {/* Product List */}
       <div className="product-list">
-        {products.map((product, index) => (
-          <ProductCard 
-            key={index} 
-            image={`data:image/jpeg;base64,${product.product_img}`} 
-            name={product.product_name}
-            price={product.product_price}
-            brandLogo={imageSrc}
-          />
-        ))}
+      {products.map((product, index) => (
+  <ProductCard 
+    key={index} 
+    image={`data:image/jpeg;base64,${product.product_img}`} 
+    name={product.product_name}
+    price={product.product_price}
+    brandLogo={imageSrc}
+    productId={product.product_id} // Pass the productId here
+  />
+))}
+
       </div>
     </div>
   );
