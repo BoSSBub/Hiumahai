@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Promotion.css';
 import axios from 'axios';
-
+import { Link } from 'react-router-dom'; // Import Link
 const Promotion = () => {
   const [images, setImages] = useState([]);
   const [sideImages, setSideImages] = useState([]); // State สำหรับ promotion-side-section
@@ -15,6 +15,7 @@ const Promotion = () => {
         const data = response.data;
         const formattedImages = data.map(item => ({
           id: item.imgpt_id,
+          idbrand : item.brand_id,
           src: `data:image/jpeg;base64,${item.imgpt_img}`,
           alt: item.imgpt_name || `Promotion ${item.imgpt_id}`,
         }));
@@ -48,7 +49,7 @@ const Promotion = () => {
       setIsSliding(false);
     }, 500);
   };
-
+console.log(images);
   return (
     <div className="promotion-container">
       {/* Left section: Image slider */}
@@ -61,6 +62,7 @@ const Promotion = () => {
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
               >
                 {images.map((image) => (
+                  
                   <img key={image.id} src={image.src} alt={image.alt} className="slide-image" />
                 ))}
               </div>
@@ -85,7 +87,9 @@ const Promotion = () => {
         {sideImages.length > 0 ? (
           sideImages.map((image) => (
             <div key={image.id} className="promo-item">
+              <Link to={`/brands/${image.idbrand}`} key={image.id}>
               <img src={image.src} alt={image.alt} className="side-promo-image" />
+              </Link>
             </div>
           ))
         ) : (

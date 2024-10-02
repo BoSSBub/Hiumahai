@@ -6,11 +6,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import BrandList from './components/Brand';
 import BrandDetail from './components/BrandDetail';
-import AllBrands from './components/AllBrands';  // Import the new AllBrands component
+import AllBrands from './components/AllBrands';  
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AllProduct from './components/AllProduct';
 import AdviseProduct from './components/AdviseProduct';
-import ContactUs from './components/ContactUs'; // Import the new ContactUs component
+import ContactUs from './components/ContactUs'; 
 import MainPromotion from './components/MainPromotion';
 import Login from './components/login';  // ใช้ตัว L พิมพ์ใหญ่
 import Register from './components/Register';
@@ -19,6 +19,7 @@ import Myhiu from './components/Myhiu';
 import Allhiu from './components/Allhiu';
 import Addproduct from './components/Addproduct';
 import Allhiubrand from './components/Allhiubrand';
+import ProductDetail from './components/ProductDetail';
 function App() {
   return (
     <Router>
@@ -31,13 +32,13 @@ function App() {
               <>
                 <Promotion />  
                 <BrandList />
-                <AdviseProduct/>
-                <AllProduct/>
+                <AdviseProduct />
+                <AllProduct />
               </>
             } 
           />
           <Route path="/brands/:id" element={<BrandDetail />} />  
-          <Route path="/brands" element={<AllBrands />} />  {/* Route for showing all brands */}
+          <Route path="/brands" element={<AllBrands />} />  
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/promotions" element={<MainPromotion />} /> {/* New route for mainPromotion */}
           <Route path="/login" element={<Login />} />  {/* ใช้ Login ที่ถูกต้อง */}
@@ -47,6 +48,7 @@ function App() {
           <Route path="/allhiu" element={<Allhiu/>} />
           <Route path="/allhiubrands" element={<Allhiubrand/>} />
           <Route path="/addproduct" element={<Addproduct/>} />
+          <Route path="/product/:productId" element={<ProductDetail />} /> {/* Corrected here */}
 
 
          

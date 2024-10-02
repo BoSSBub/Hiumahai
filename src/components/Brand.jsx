@@ -49,7 +49,7 @@ const BrandImage = ({ id }) => {
       })
       .catch((error) => console.error('Error fetching image:', error));
   }, [id]);
-
+console.log(id);
   return (
     <div className="brand-image-container">
       {imageSrc ? (
