@@ -12,6 +12,13 @@ import AllProduct from './components/AllProduct';
 import AdviseProduct from './components/AdviseProduct';
 import ContactUs from './components/ContactUs'; // Import the new ContactUs component
 import MainPromotion from './components/MainPromotion';
+import Login from './components/login';  // ใช้ตัว L พิมพ์ใหญ่
+import Register from './components/Register';
+import Nomember from './components/Nomember';
+import Myhiu from './components/Myhiu';
+import Allhiu from './components/Allhiu';
+import Addproduct from './components/Addproduct';
+import Allhiubrand from './components/Allhiubrand';
 function App() {
   return (
     <Router>
@@ -33,6 +40,16 @@ function App() {
           <Route path="/brands" element={<AllBrands />} />  {/* Route for showing all brands */}
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/promotions" element={<MainPromotion />} /> {/* New route for mainPromotion */}
+          <Route path="/login" element={<Login />} />  {/* ใช้ Login ที่ถูกต้อง */}
+          <Route path="/register" element={<Register />} />  
+          <Route path="/nomember" element={<Nomember/>} />
+          <Route path="/myhiu" element={<Myhiu/>} />
+          <Route path="/allhiu" element={<Allhiu/>} />
+          <Route path="/allhiubrands" element={<Allhiubrand/>} />
+          <Route path="/addproduct" element={<Addproduct/>} />
+
+
+         
         </Routes>
       </>
     </Router>

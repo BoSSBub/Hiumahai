@@ -1,8 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // นำเข้า useNavigate
 import './Navbarmain.css';
 
 const Navbarmain = () => {
+  const navigate = useNavigate(); // สร้างตัวแปร navigate
+
   return (
     <nav className="navbar">
       <div className="logo">
@@ -20,7 +22,7 @@ const Navbarmain = () => {
       </div>
       <div className="icons">
         <button className="iconButton">🛒</button>
-        <button className="iconButton">👤</button>
+        <button className="iconButton" onClick={() => navigate('/login')}>👤</button> {/* เพิ่ม navigate ในปุ่มนี้ */}
       </div>
     </nav>
   );

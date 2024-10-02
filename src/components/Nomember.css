@@ -1,0 +1,73 @@
+.outer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white; /* Light background color */
+  }
+  
+  .noprofile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Adds spacing between elements */
+  }
+  
+  .profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .username {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the content */
+    position: relative; /* Allows absolute positioning inside */
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #d4c2f1; /* Light purple for primary and secondary buttons */
+    color: #000;
+    width: 500px;
+  }
+  
+  .btn-logout {
+    background-color: #ffb3b3; /* Light red */
+    color: #fff;
+  }
+  
+  .iconnomember {
+    position: absolute;
+    left: 10px; /* Adjusts icon to the left side */
+    padding: 20px;
+  }
+  
+  .btn-text {
+    flex: 1;
+    text-align: center; /* Centers text within button */
+  }
+  

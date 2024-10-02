@@ -1,0 +1,102 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+.outer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+.login-card {
+    background: #D5CDF3;
+    padding: 2vw; /* ปรับให้เป็น viewport width เพื่อ responsive */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 80vw; /* กำหนดความกว้างของการ์ดให้ขึ้นอยู่กับ viewport width */
+    max-width: 400px; /* กำหนด max-width หากจอใหญ่ */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.login-logo img {
+    width: 150px; /* Increased size */
+    margin-bottom: 20px;
+}
+
+.login-title {
+    margin-bottom: 20px;
+    color: #333; /* Title color */
+}
+
+.input-group {
+    margin-bottom: 15px;
+    position: relative;
+    width: 100%; /* Makes sure input fields take full width inside the card */
+}
+
+.input-group .iconlogin {
+    position: absolute;
+    margin-left: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.input-group input {
+    width: calc(100% - 40px); /* Adjust width to account for padding and icons */
+    padding: 8px 8px 8px 40px; /* Padding to make space for the icon */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.login-btn {
+    background-color: #9BC3FF; /* Login button color */
+    color: rgb(0, 0, 0);
+}
+
+.register-btn {
+    background-color: #82E592; /* Register button color */
+    color: rgb(0, 0, 0);
+}
+.button-group {
+    display: flex;
+    justify-content: space-between; /* Aligns one button to the left and the other to the right */
+    width: 100%; /* Takes full width to spread buttons apart */
+    gap: 20px;
+}
+.input-container {
+    display: flex;
+    align-items: center; /* Aligns items vertically in the center */
+    margin-bottom: 15px;
+  }
+  
+  .iconlogin {
+    margin-right: 10px; /* Adds some space between the icon and the input */
+    color: #000000; /* Icon color */
+    font-size: 1.2em; /* Icon size */
+  }
+  
+  .login-input {
+    flex-grow: 1; /* Allows input to take up the rest of the space */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    width: 220px;
+  
+  }
+  
