@@ -101,7 +101,7 @@ const ProductDetail = () => {
         </div>
         
         {/* User Details (คนรับหิ้ว) */}
-        <div className="detail-box">
+        <div className="detail-box-1">
           <h3>คนรับหิ้ว</h3>
           {userDetails.length === 1 ? ( // Check if there is only one user
             <div className="selected-user-info">
@@ -121,38 +121,38 @@ const ProductDetail = () => {
               {selectedUser && (
                 <div className="selected-user-info">
                   <img src={`data:image/jpeg;base64,${selectedUser.userimg}`} alt={selectedUser.username} className="selected-user-image" />
-                  <p>ชื่อ: {selectedUser.username}</p>
+                  <p>{selectedUser.username}</p>
                 </div>
               )}
             </>
           ) : (
             <p>ไม่มีข้อมูลผู้รับหิ้ว</p>
           )}
-          <div>
-          <p>ค่าหิ้ว: {product.product_hiu}</p>
-          <p>ค่าส่ง: {product.product_deliver}</p>
+          <div className='selected-user-info-1'>
+          <h4>ค่าหิ้ว</h4><h5>฿{product.product_hiu}</h5>
+          <h4>ค่าส่ง</h4><h6> ฿{product.product_deliver}</h6>
           </div>
-          <div>
-          <button class = "iconbutton101">
+          <div className='selected-user-info-btn'>
+          <button class="button101">
+  <span class="button101-content">ฝากหิ้วสินค้า </span>
+</button>
+<button  class="button102">
   <div class="svg-wrapper-1">
     <div class="svg-wrapper">
     <svg
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 24 24"
-  width="24"
-  height="24"
-  fill="currentColor"
->
-  <path d="M7 4h14l-1.5 9H8.5L7 4zM1 1h4l2 12h13l1-6H5.8L4 1H1zm2 22c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm16 0c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
-</svg>
-
+          viewBox="0 0 576 512"
+          width="20"
+          height="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+            fill="#009688"
+          ></path>
+        </svg>
     </div>
   </div>
   <span>ลงรถเข็น</span>
-</button>
-/* From Uiverse.io by Madflows */ 
-<button class="iconbutton102">
-  <span class="iconbutton102-content">ฝากหิ้วสินค้า </span>
 </button>
 
           </div>

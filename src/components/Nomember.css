@@ -30,6 +30,7 @@
   .username {
     font-size: 18px;
     font-weight: bold;
+    color: #000;
   }
   
   .buttons {
@@ -40,7 +41,8 @@
   }
   
   .btn-primary,
-  .btn-secondary {
+  .btn-secondary,
+  .btn-primary-merchant {
     display: flex;
     align-items: center;
     justify-content: center; /* Center the content */
@@ -60,14 +62,42 @@
     color: #fff;
   }
   
-  .iconnomember {
+  .iconnomember,
+  .iconnomember-merchant {
     position: absolute;
     left: 10px; /* Adjusts icon to the left side */
     padding: 20px;
   }
   
-  .btn-text {
+  .btn-text,
+  .btn-text-merchant {
     flex: 1;
     text-align: center; /* Centers text within button */
   }
-  
+  .search-container {
+  position: relative;
+}
+
+.search-input {
+  padding: 0.75rem 1.25rem; /* Equivalent to py-3 and px-5 */
+  border-radius: 1.25rem; /* Equivalent to rounded-xl */
+  border: 1px solid #d1d5db; /* Equivalent to border-gray-300 */
+  transition: all 0.3s ease; /* Transition for width and border */
+  width: 14rem; /* Equivalent to w-56 */
+  outline: none; /* Remove default outline */
+  background-color: white;
+}
+
+.search-input:focus {
+  border-width: 2px; /* Equivalent to focus:border-2 */
+  width: 16rem; /* Equivalent to focus:w-64 */
+}
+
+.search-icon {
+  position: absolute;
+  top: 0.75rem; /* Equivalent to top-3 */
+  right: 0.75rem; /* Equivalent to right-3 */
+  width: 1.5rem; /* Adjust size as needed */
+  height: 1.5rem; /* Adjust size as needed */
+  color: #6b7280; /* Equivalent to text-gray-500 */
+}

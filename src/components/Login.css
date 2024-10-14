@@ -92,11 +92,12 @@
   }
   
   .login-input {
-    flex-grow: 1; /* Allows input to take up the rest of the space */
+    flex-grow: 1;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 15px;
     width: 220px;
-  
-  }
+    background-color: white;
+    color: #000;
+}
   

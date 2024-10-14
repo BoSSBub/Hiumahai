@@ -4,6 +4,11 @@
     align-items: center;
     background-color: #ffffff; /* ปรับแต่งสีตามต้องการ */
 }
+.upload-text {
+    font-size: 16px; /* Adjust size as needed */
+    color: #333; /* Change color as needed */
+    text-align: center; /* Center align text */
+}
 
 .register-form {
     background-color: #D5CDF3;
@@ -44,6 +49,8 @@
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 12px;
+    background: white;
+    color: black;
 }
 
 .buttonsregister {

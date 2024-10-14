@@ -20,6 +20,7 @@ import Allhiu from './components/Allhiu';
 import Addproduct from './components/Addproduct';
 import Allhiubrand from './components/Allhiubrand';
 import ProductDetail from './components/ProductDetail';
+import RegisterSeller from './components/RegisterSeller';
 function App() {
   return (
     <Router>
@@ -49,7 +50,8 @@ function App() {
           <Route path="/allhiubrands" element={<Allhiubrand/>} />
           <Route path="/addproduct" element={<Addproduct/>} />
           <Route path="/product/:productId" element={<ProductDetail />} /> {/* Corrected here */}
-
+          <Route path="/nomember" element={<Nomember />} />
+          <Route path="/register-seller" element={<RegisterSeller />} />
 
          
         </Routes>
