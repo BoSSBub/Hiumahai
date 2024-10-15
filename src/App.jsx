@@ -21,6 +21,7 @@ import Addproduct from './components/Addproduct';
 import Allhiubrand from './components/Allhiubrand';
 import ProductDetail from './components/ProductDetail';
 import RegisterSeller from './components/RegisterSeller';
+import Footer from './components/Footer';
 function App() {
   return (
     <Router>
@@ -55,6 +56,7 @@ function App() {
 
          
         </Routes>
+        <Footer/>
       </>
     </Router>
   );

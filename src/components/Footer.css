@@ -1,0 +1,146 @@
+.footer {
+    background-color: #293689;
+    color: white;
+    padding: 20px 0;
+    width: 1468px;
+    margin-left: -95px;
+    margin-top: 35px;
+    margin-bottom: -32px;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .footer-logo p {
+    margin: 5px 0;
+  }
+  
+  .footer-links {
+    display: flex;
+    flex-direction: row;
+  }
+  .footer-logo img{
+    width: 120px;
+  }
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 5px 10px;
+    width: 104px;
+    font-size: 18px;
+  }
+  .footer-contact-1{
+    position: absolute;
+    margin-left: 500px;
+    margin-top: 59px;
+  }
+  .footer-contact-1 p{
+    text-align: -webkit-left;
+    font-size: 16px;
+  }
+  .footer-links p {
+    color: white;
+    text-decoration: none;
+    margin: 5px 10px;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+
+
+/* From Uiverse.io by ahmed150up */ 
+.footer-socials {
+    display: flex;
+    height: 70px;
+    width: 270px;
+    margin-top: 65px;
+    
+  }
+  
+  .footer-socials svg {
+    position: absolute;
+    display: flex;
+    width: 60%;
+    height: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    opacity: 1;
+    transition: opacity 0.25s;
+    z-index: 2;
+    cursor: pointer;
+  }
+  
+  .footer-socials .social-link1,.footer-socials .social-link2,.footer-socials .social-link3,.footer-socials .social-link4 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    color: whitesmoke;
+    font-size: 24px;
+    text-decoration: none;
+    transition: 0.25s;
+    border-radius: 50px;
+  }
+  
+  .footer-socials svg {
+    transform: scale(1);
+  }
+  
+  .footer-socials .social-link1:hover {
+    background: #f09433;
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+    animation: bounce_613 0.4s linear;
+  }
+  
+  .footer-socials .social-link2:hover {
+    background-color: #00ccff;
+    animation: bounce_613 0.4s linear;
+  }
+  
+  .footer-socials .social-link3:hover {
+    background-color: #5865f2;
+    animation: bounce_613 0.4s linear;
+  }
+  
+  .footer-socials .social-link4:hover {
+    background-color: #12a50b;
+    animation: bounce_613 0.4s linear;
+  }
+  
+  @keyframes bounce_613 {
+    40% {
+      transform: scale(1.4);
+    }
+  
+    60% {
+      transform: scale(0.8);
+    }
+  
+    80% {
+      transform: scale(1.2);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+

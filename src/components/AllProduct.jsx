@@ -1,9 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ProductCard from './ProductCard';
-
+import './AllProduct.css';
 const AllProduct = () => {
   const [products, setProducts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
   const [error, setError] = useState(null);
+  const productsPerPage = 9;
+
+  // Create a ref to track the title element
+  const titleRef = useRef(null);
 
   // Fetch all products
   useEffect(() => {
@@ -22,6 +27,19 @@ const AllProduct = () => {
     fetchProducts();
   }, []);
 
+  // Pagination logic
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
+  const totalPages = Math.ceil(products.length / productsPerPage);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+
+    // Scroll to the title element smoothly
+    titleRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   if (error) {
     return <div className="error-message">Error: {error}</div>;
   }
@@ -32,19 +50,37 @@ const AllProduct = () => {
 
   return (
     <>
-      <h2 className="brand-title">สินค้าทั้งหมด</h2>
+      {/* Attach the ref to the title element */}
+      <h2 ref={titleRef} className="brand-title">สินค้าทั้งหมด</h2>
+
       <div className="product-list">
-        {products.map((product) => (
-          <ProductCard 
-            key={product.product_id}  // Use product_id as the key
-            productId={product.product_id}  // Pass the productId prop
-            image={`data:image/jpeg;base64,${product.product_img}`} 
+        {currentProducts.map((product) => (
+          <ProductCard
+            key={product.product_id}
+            productId={product.product_id}
+            image={`data:image/jpeg;base64,${product.product_img}`}
             name={product.product_name}
             price={product.product_price}
-            brandLogo={`data:image/jpeg;base64,${product.brand_img}`} 
+            brandLogo={`data:image/jpeg;base64,${product.brand_img}`}
           />
         ))}
+        {/* Pagination controls */}
+        <div className="pagination-1"> 
+      <div className="pagination">
+        {Array.from({ length: totalPages }, (_, index) => (
+          <button
+            key={index + 1}
+            className={`page-button ${currentPage === index + 1 ? 'active' : ''}`}
+            onClick={() => handlePageChange(index + 1)}
+          >
+            {index + 1}
+          </button>
+        ))}
       </div>
+      </div>
+      </div>
+
+      
     </>
   );
 };
