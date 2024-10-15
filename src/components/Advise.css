@@ -7,7 +7,7 @@
   margin: 20px 0;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   background-color: white;
-  border: 5px solid #ffd6f4; /* เพิ่มกรอบหนาสีชมพู */
+  border: 5px solid #D0D0D5; /* เพิ่มกรอบหนาสีชมพู */
 }
 
 /* ส่วนของรูปภาพ */
@@ -47,12 +47,12 @@
   padding: 20px;
   width: 50%;
   color: black;
-  background-color: #ffeaff; /* สีพื้นหลังอ่อน */
+  background-color: #D0D0D5; /* สีพื้นหลังอ่อน */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-align: left;
-  border-left: 5px solid #ffd6f4;
+  border-left: 5px solid #D0D0D5;
 }
 
 /* ชื่อสินค้า */

@@ -12,7 +12,7 @@
 }
 
 .register-form1 {
-  background-color: #D5CDF3;
+  background-color: #E0E1F1;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -68,19 +68,21 @@
   padding: 10px 20px;
   border: none;
   border-radius: 30px;
-  color: black;
+  color: white;
   flex: 0 1 48%;
   text-align: center;
 }
 
 .cancel-btn1 {
-  background-color: #FC8585;
+  background-color: #D7065D;
   transition: background-color 0.3s;
+  color: white;
 }
 
 .submit-btn1 {
-  background-color: #82E592;
+  background-color: #476BB3;
   transition: background-color 0.3s;
+  color: white;
 }
 
 .outer-container1 {
@@ -127,4 +129,15 @@
   background-repeat: no-repeat;
   background-position: right 10px top 50%;
   background-size: 10px;
+}
+.custom-confirm-btn {
+  color: white !important;  /* สีฟอนต์เป็นสีขาว */
+  width: 150px;  /* ลดความกว้างของปุ่ม */
+  height: 40px;  /* ความสูงของปุ่ม */
+  font-size: 16px;  /* ขนาดฟอนต์ของปุ่ม */
+}
+
+.custom-swal-popup {
+  width: 600px !important;  /* ความกว้างของ Swal */
+  height: 400px !important;  /* ความสูงของ Swal */
 }

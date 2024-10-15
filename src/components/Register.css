@@ -11,7 +11,7 @@
 }
 
 .register-form {
-    background-color: #D5CDF3;
+    background-color: #E0E1F1;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -65,18 +65,18 @@
     padding: 10px 20px;
     border: none;
     border-radius: 30px; /* ขอบปุ่มโค้งมน */
-    color: black; /* สีข้อความ */
+    color: rgb(255, 255, 255); /* สีข้อความ */
     flex: 0 1 48%; /* ปรับให้ปุ่มมีความกว้างเป็น 48% ของ container */
     text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
 }
 
 .cancel-btn {
-    background-color: #FC8585; /* สีพื้นหลังแดงอ่อน */
+    background-color: #D7065D; /* สีพื้นหลังแดงอ่อน */
     transition: background-color 0.3s; /* เพิ่มการเปลี่ยนสีเมื่อ hover */
 }
 
 .submit-btn {
-    background-color: #82E592; /* สีพื้นหลังเขียวอ่อน */
+    background-color: #476BB3; /* สีพื้นหลังเขียวอ่อน */
     transition: background-color 0.3s; /* เพิ่มการเปลี่ยนสีเมื่อ hover */
 }
 .outer-container {

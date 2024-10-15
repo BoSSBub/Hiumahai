@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './Nomember.css'; 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart, faExclamationCircle, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'; 
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';  // Import axios for API call
 
@@ -37,37 +35,35 @@ function Nomember() {
       state: { userDetails },  // ส่ง userDetails ทั้งหมด
     });
   };
-  
-  
 
   return (
     <div className="outer-container">
       <div className="noprofile-container">
         <div className="profile-header">
           <div className="username">{username}</div>
-          <img src={profileImageSrc} alt="profile" className="profile-image" />
+          <img src={profileImageSrc} alt="profile" className="profile-image1" />
         </div>
         <div className="buttons">
           {role !== 'Merchant' ? (
             <button className="btn-primary" onClick={handleRegisterClick}>
-              <FontAwesomeIcon icon={faShoppingCart} className="iconnomember" />
+              <img src="src/img/shop1.png" alt="Shop" className="iconnomember" /> {/* เปลี่ยนเป็น shop1.png */}
               <span className="btn-text">สมัครเป็นผู้รับหิ้ว</span>
             </button>
           ) : (
             <button className="btn-primary-merchant">
-              <FontAwesomeIcon icon={faShoppingCart} className="iconnomember-merchant" />
+              <img src="src/img/shop1.png" alt="Shop" className="iconnomember-merchant" /> {/* เปลี่ยนเป็น shop1.png */}
               <span className="btn-text-merchant">รับหิ้วของฉัน</span>
             </button>
           )}
 
           <button className="btn-secondary">
-            <FontAwesomeIcon icon={faExclamationCircle} className="iconnomember" />
+            <img src="src/img/problem.png" alt="Problem" className="iconnomember" /> {/* เปลี่ยนเป็น problem.png */}
             <span className="btn-text">แจ้งปัญหา</span>
           </button>
         </div>
         <div className="bottom-section">
           <button className="btn-logout">
-            <FontAwesomeIcon icon={faSignOutAlt} className="iconnomember" />
+          {/* คุณสามารถเปลี่ยนเป็นไอคอน logout */}
             <span className="btn-text">ออกจากระบบ</span>
           </button>
         </div>

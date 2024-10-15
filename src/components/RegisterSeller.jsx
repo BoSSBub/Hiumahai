@@ -34,6 +34,7 @@ function RegisterSeller() {
   };
 
   // ฟังก์ชันแสดง Swal เมื่อกดปุ่มยืนยัน
+  // ฟังก์ชันแสดง Swal เมื่อกดปุ่มยืนยัน
   const handleSubmit = (e) => {
     e.preventDefault();
     if (e.target.checkValidity()) {
@@ -46,9 +47,13 @@ function RegisterSeller() {
             <p style="margin-top: 10px;">หลังจากดำเนินการตรวจสอบข้อมูลเสร็จเรียบร้อยแล้ว คุณจะได้รับอีเมลยืนยันตัวตนจาก หิ้วมาให้ (Hiumahai) ภายใน 2-3 วันทำการ ขอบคุณค่ะ</p>
           </div>
         `,
+        background: '#E0E1F1', // สีพื้นหลังของ Swal
         confirmButtonText: 'ยืนยัน',
+        color: '#333333',
+        confirmButtonColor: '#476BB3', // สีของปุ่มยืนยัน
         customClass: {
-          confirmButton: 'btn-primary',
+          confirmButton: 'custom-confirm-btn', // ปรับแต่งปุ่ม
+          popup: 'custom-swal-popup' // ปรับแต่งขนาด Swal
         }
       }).then(() => {
         // เมื่อผู้ใช้กดปุ่มยืนยัน
@@ -58,6 +63,7 @@ function RegisterSeller() {
       console.log('Please fill out all required fields.');
     }
   };
+  
 
   return (
     <div className="outer-container1">
