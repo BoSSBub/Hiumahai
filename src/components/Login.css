@@ -4,15 +4,21 @@
     align-items: center;
     background-color: #ffffff;
 }
+.iconlogin {
+  width: 24px;  /* ปรับขนาดความกว้างของไอคอน */
+  height: 24px; /* ปรับขนาดความสูงของไอคอน */
+  position: absolute;
+  margin: -30px;
+}
 .outer-container {
-    display: flex;
+    display: flex;  
     justify-content: center;
     align-items: center;
   }
 
 
 .login-card {
-    background: #D5CDF3;
+    background: #E0E1F1;
     padding: 2vw; /* ปรับให้เป็น viewport width เพื่อ responsive */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -65,19 +71,13 @@
 }
 
 .login-btn {
-    background-color: #9BC3FF; /* Login button color */
-    color: rgb(0, 0, 0);
+    background-color: #476BB3; /* Login button color */
+    color: white;
+    width: 120px;
 }
 
 .register-btn {
-    background-color: #82E592; /* Register button color */
-    color: rgb(0, 0, 0);
-}
-.button-group {
-    display: flex;
-    justify-content: space-between; /* Aligns one button to the left and the other to the right */
-    width: 100%; /* Takes full width to spread buttons apart */
-    gap: 20px;
+    color:#476BB3;
 }
 .input-container {
     display: flex;
@@ -86,9 +86,10 @@
   }
   
   .iconlogin {
-    margin-right: 10px; /* Adds some space between the icon and the input */
-    color: #000000; /* Icon color */
-    font-size: 1.2em; /* Icon size */
+    width: 24px;  /* ปรับขนาดความกว้างของไอคอน */
+    height: 24px; /* ปรับขนาดความสูงของไอคอน */
+    position: absolute;
+    margin-right: 10px;
   }
   
   .login-input {
@@ -100,4 +101,41 @@
     background-color: white;
     color: #000;
 }
+  
+.register-link {
+    position: relative;
+    color: #476BB3; /* คงสีข้อความเดิม */
+    cursor: pointer;
+    text-decoration: none; /* ปิดการใช้งานเส้นใต้ปกติ */
+    transition: color 0.3s ease; /* เพิ่มการเปลี่ยนแปลงที่นุ่มนวลสำหรับสีถ้าต้องการ */
+  }
+  
+  .register-link::after {
+    content: '';
+    position: absolute;
+    left: 20px; /* เริ่มเส้นจากจุดที่กำหนด */
+    bottom: -2px; /* ระยะจากข้อความ */
+    width: 40%; /* ความยาวของเส้นใต้เริ่มต้น */
+    height: 1px; /* ความหนาของเส้นใต้ */
+    background-color: #476BB3; /* สีของเส้นใต้ */
+    transition: width 0.3s ease; /* เพิ่มการเปลี่ยนแปลงความยาวของเส้น */
+  }
+  
+  .register-link:hover::after {
+    width: 100%; /* ขยายความยาวเส้นให้เต็ม */
+    left: 0;
+    right: 0;
+  }
+  
+  .register-link:hover {
+    color: #476BB3; /* คงสีข้อความเดิมเมื่อ hover */
+  }
+  
+  
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* ระยะห่างระหว่างปุ่มและลิงก์ */
+  }
   
