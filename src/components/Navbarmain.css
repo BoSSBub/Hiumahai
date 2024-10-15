@@ -1,6 +1,6 @@
 .menu a {
   text-decoration: none; /* Remove the underline from links */
-  color: black; /* Set text color to black */
+  color: rgb(255, 255, 255); /* Set text color to black */
 }
 
 .menu a:hover {
@@ -12,7 +12,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #D5CDF3;
+  background-color: #283287;
   position: fixed;
   top: 0;
   left: 0;
@@ -28,11 +28,11 @@
 }
 
 .logoImg {
-  height: 100px;
+  height: 80px;
 }
 
 .menu {
-  color: black;
+  color: #333;
   display: flex;
   list-style: none;
   gap: 15px;
@@ -46,13 +46,14 @@
   font-weight: bold;
   font-size: 16px;
   margin: 16px;
+  color:white;
 }
 
 .searchBar {
   color: white;
   display: flex;
   align-items: center;
-  border: 1px solid #ccc;
+  border: 1px;
   border-radius: 5px;
 }
 
@@ -61,7 +62,7 @@
   padding: 5px 15px;
   border: none;
   outline: none;
-  color: black;
+  color: #333;
   font-size: 14px;
 }
 
@@ -87,4 +88,9 @@
 
 body {
   padding-top: 60px;
+}
+
+.iconImg {
+  width: 35px;
+  height: 35px;
 }

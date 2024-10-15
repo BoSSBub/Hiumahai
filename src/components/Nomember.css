@@ -1,103 +1,153 @@
 .outer-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white; /* Light background color */
-  }
-  
-  .noprofile-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px; /* Adds spacing between elements */
-  }
-  
-  .profile-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .profile-image {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-  }
-  
-  .username {
-    font-size: 18px;
-    font-weight: bold;
-    color: #000;
-  }
-  
-  .buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-  }
-  
-  .btn-primary,
-  .btn-secondary,
-  .btn-primary-merchant {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Center the content */
-    position: relative; /* Allows absolute positioning inside */
-    padding: 15px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #d4c2f1; /* Light purple for primary and secondary buttons */
-    color: #000;
-    width: 500px;
-  }
-  
-  .btn-logout {
-    background-color: #ffb3b3; /* Light red */
-    color: #fff;
-  }
-  
-  .iconnomember,
-  .iconnomember-merchant {
-    position: absolute;
-    left: 10px; /* Adjusts icon to the left side */
-    padding: 20px;
-  }
-  
-  .btn-text,
-  .btn-text-merchant {
-    flex: 1;
-    text-align: center; /* Centers text within button */
-  }
-  .search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  /* Light background color */
+}
+
+.noprofile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  /* Adds spacing between elements */
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-image1 {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.username {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-primary-merchant {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Center the content */
+  position: relative;
+  /* Allows absolute positioning inside */
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid #476BB3;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: white;
+  /* Light purple for primary and secondary buttons */
+  color: #476BB3;
+  width: 500px;
+
+}
+
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-primary-merchant:hover {
+  background-color: #E0E1F1;
+  /* สีพื้นหลังเมื่อ hover */
+  /* ปรับสีตัวอักษรถ้าต้องการ */
+}
+
+
+.btn-logout {
+  background-color: white;
+  color: #D7065D; /* สีตัวอักษรสีแดงเข้ม */
+  border: 1px solid #D7065D;
+  border-radius: 50px;
+  outline: none; /* ลบเส้นขอบตอนโฟกัส */
+}
+
+.btn-logout:hover,
+.btn-logout:focus {
+  background-color: #FAD1E1; /* สีแดงอ่อนเมื่อ hover */
+  color: #D7065D; /* คงสีตัวอักษรเดิม */
+  outline: none; /* ลบเส้นขอบตอน hover และ focus */
+  border-color: #D7065D; /* ยังคงสี border เดิมเมื่อ hover */
+}
+
+
+
+
+.iconnomember,
+.iconnomember-merchant {
+  position: absolute;
+  left: 10px;
+  /* Adjusts icon to the left side */
+  padding: 20px;
+}
+
+.btn-text,
+.btn-text-merchant {
+  flex: 1;
+  text-align: center;
+  /* Centers text within button */
+}
+
+.search-container {
   position: relative;
 }
 
 .search-input {
-  padding: 0.75rem 1.25rem; /* Equivalent to py-3 and px-5 */
-  border-radius: 1.25rem; /* Equivalent to rounded-xl */
-  border: 1px solid #d1d5db; /* Equivalent to border-gray-300 */
-  transition: all 0.3s ease; /* Transition for width and border */
-  width: 14rem; /* Equivalent to w-56 */
-  outline: none; /* Remove default outline */
+  padding: 0.75rem 1.25rem;
+  /* Equivalent to py-3 and px-5 */
+  border-radius: 1.25rem;
+  /* Equivalent to rounded-xl */
+  border: 1px solid #d1d5db;
+  /* Equivalent to border-gray-300 */
+  transition: all 0.3s ease;
+  /* Transition for width and border */
+  width: 14rem;
+  /* Equivalent to w-56 */
+  outline: none;
+  /* Remove default outline */
   background-color: white;
 }
 
 .search-input:focus {
-  border-width: 2px; /* Equivalent to focus:border-2 */
-  width: 16rem; /* Equivalent to focus:w-64 */
+  border-width: 2px;
+  /* Equivalent to focus:border-2 */
+  width: 16rem;
+  /* Equivalent to focus:w-64 */
 }
 
 .search-icon {
   position: absolute;
-  top: 0.75rem; /* Equivalent to top-3 */
-  right: 0.75rem; /* Equivalent to right-3 */
-  width: 1.5rem; /* Adjust size as needed */
-  height: 1.5rem; /* Adjust size as needed */
-  color: #6b7280; /* Equivalent to text-gray-500 */
+  top: 0.75rem;
+  /* Equivalent to top-3 */
+  right: 0.75rem;
+  /* Equivalent to right-3 */
+  width: 1.5rem;
+  /* Adjust size as needed */
+  height: 1.5rem;
+  /* Adjust size as needed */
+  color: #6b7280;
+  /* Equivalent to text-gray-500 */
+}
+
+.iconnomember {
+  width: 24px;
+  height: 24px;
 }

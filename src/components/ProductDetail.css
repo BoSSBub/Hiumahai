@@ -58,7 +58,7 @@
 .productDetail-info-2 {
   display: flex;
   width: 400px;
-  background-color: #D6E7FF;
+  background-color: #D0D0D5;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   justify-content: space-around;
@@ -89,7 +89,7 @@
 }
 
 .detail-box {
-  background-color: #FFE7FB;
+  background-color: #E0E1F1;
   padding: 15px;
   padding-top: 5px;
   border-radius: 8px;
@@ -102,7 +102,7 @@
   height: 295px;
 }
 .detail-box-1 {
-  background-color: #FFE7FB;
+  background-color: #E0E1F1;
   padding: 15px;
   border-radius: 8px;
   width: 350px;
@@ -275,7 +275,7 @@
 .button102 {
   font-family: inherit;
   font-size: 18px;
-  background: #CBBDFF;
+  background: white;
   color: white;
   padding: 0.7em 1em;
   padding-left: 0.9em;

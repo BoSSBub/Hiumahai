@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import './Login.css';  
-import logo from "../assets/logo.png"; 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faLock } from '@fortawesome/free-solid-svg-icons';
+import './Login.css';
+import logo from "../assets/logo.png";
 import { useNavigate } from 'react-router-dom';
+
+// นำเข้ารูปภาพจากโฟลเดอร์ src/img
+import userIcon from "../img/user2.png";
+import lockIcon from "../img/lock.png";
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -57,36 +59,36 @@ function Login() {
           {errorMessage && <div className="error-message">{errorMessage}</div>}
           <form className="login-form" onSubmit={handleSubmit}>
             <div className="input-container">
-              <FontAwesomeIcon icon={faUser} className="iconlogin" />
-              <input 
-                type="email" 
-                className="login-input" 
-                placeholder="กรุณกรอกอีเมล" 
+              <img src={userIcon} alt="User" className="iconlogin" /> {/* ใช้รูปภาพ user2.png */}
+              <input
+                type="email"
+                className="login-input"
+                placeholder="กรุณกรอกอีเมล"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                required 
+                required
               />
             </div>
             <div className="input-container">
-              <FontAwesomeIcon icon={faLock} className="iconlogin" />
-              <input 
-                type="password" 
-                className="login-input" 
-                placeholder="กรุณากรอกรหัสผ่าน" 
+              <img src={lockIcon} alt="Lock" className="iconlogin" /> {/* ใช้รูปภาพ lock.png */}
+              <input
+                type="password"
+                className="login-input"
+                placeholder="กรุณากรอกรหัสผ่าน"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                required 
+                required
               />
             </div>
             <div className="button-group">
               <button type="submit" className="btn login-btn">เข้าสู่ระบบ</button>
-              <button 
-                type="button" 
-                className="btn register-btn" 
+              <a
+                href="#"
+                className="register-link"
                 onClick={() => navigate('/register')}
               >
                 ลงทะเบียน
-              </button>
+              </a>
             </div>
           </form>
         </div>
