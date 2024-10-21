@@ -12,7 +12,7 @@ import AllProduct from './components/AllProduct';
 import AdviseProduct from './components/AdviseProduct';
 import ContactUs from './components/ContactUs'; 
 import MainPromotion from './components/MainPromotion';
-import Login from './components/login';  // ใช้ตัว L พิมพ์ใหญ่
+import Login from './components/Login';  // ใช้ตัว L พิมพ์ใหญ่
 import Register from './components/Register';
 import Nomember from './components/Nomember';
 import Myhiu from './components/Myhiu';
@@ -22,8 +22,10 @@ import Allhiubrand from './components/Allhiubrand';
 import ProductDetail from './components/ProductDetail';
 import RegisterSeller from './components/RegisterSeller';
 import Footer from './components/Footer';
+import { UserProvider } from './components/UserContext';  // Import UserProvider
 function App() {
   return (
+    <UserProvider>
     <Router>
       <>
         <Navbarmain />
@@ -59,6 +61,7 @@ function App() {
         <Footer/>
       </>
     </Router>
+    </UserProvider>
   );
 }
 

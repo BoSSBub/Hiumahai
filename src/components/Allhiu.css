@@ -1,86 +1,107 @@
 .container {
-    padding: 1.5rem;
-    width: 1200px;
-    margin: 0 auto;
+  padding: 2rem;
+  max-width: 1200px; /* Limit the max width of the container */
+  margin: 0 auto; /* Center the container */
 }
 
 /* Profile Section */
 .profile-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-    width: 100%;
-    border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  width: 100%;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 1rem; /* Add padding for better spacing */
 }
 
 .profile-info {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .profile-image {
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  border: 2px solid #ddd; /* Add a light border */
 }
 
 .profile-details {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 .profile-name {
-    font-size: 1.125rem;
-    font-weight: bold;
-    text-align: start;
+  font-size: 1.25rem; /* Slightly larger font size */
+  font-weight: bold;
 }
 
 .profile-link-container {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .profile-link {
-    font-size: 0.875rem;
-    color: #6b7280;
-    margin-right: 0.5rem;
+  font-size: 0.9rem;
+  color: #1a73e8; /* Google blue for links */
+  text-decoration: none; /* Remove underline */
 }
 
 .copy-button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    color: #6b7280;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #1a73e8;
+  margin-left: 0.5rem; /* Space between link and button */
 }
-  
-  .edit-button {
-    background-color: #ff5757;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .orderhiu {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 คอลัมน์ */
-    grid-gap: 20px; /* ช่องว่างระหว่างภาพ */
-    justify-content: center; /* จัดให้อยู่ตรงกลาง */
-    padding: 20px;
-    margin-left: 120px;
-  }
-  
-  
-  
-  
-  .orderhiu div {
-    width: 200px;
-    height: 200px;
-    background-color: #e0e0e0;
-    border-radius: 10px;
-  }
-  .title{
-    text-align: left;
-  }
+
+/* Title */
+.title {
+  text-align: left;
+  margin-bottom: 1rem; /* Space below title */
+}
+
+/* Order Section */
+.orderhiu {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive columns */
+  grid-gap: 20px; /* Gap between cards */
+  padding: 20px 0; /* Top and bottom padding */
+}
+
+.product-card-allhiu {
+  background-color: #fff; /* White background for product card */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  padding: 15px; /* Padding inside the card */
+  transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effect */
+  text-align: center; /* Center text */
+}
+
+.product-card-allhiu:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.product-image-allhiu {
+  width: 100%; /* Responsive image */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Rounded corners for images */
+}
+
+.product-name-allhiu {
+  font-size: 1.1rem; /* Increase font size for product name */
+  margin: 10px 0; /* Space around product name */
+}
+
+.product-detail-allhiu {
+  font-size: 0.95rem; /* Slightly smaller font for product detail */
+  color: #555; /* Dark gray for readability */
+  margin-bottom: 10px; /* Space below detail */
+}
+
+.product-price-allhiu {
+  font-weight: bold; /* Emphasize price */
+  color: #333; /* Dark color for price */
+}

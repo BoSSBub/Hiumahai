@@ -1,15 +1,34 @@
 import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBoxOpen, faShoppingBag, faCopy } from '@fortawesome/free-solid-svg-icons'; // นำเข้าไอคอน copy
+import { faBoxOpen, faShoppingBag, faCopy } from '@fortawesome/free-solid-svg-icons';
 import './Myhiu.css';
 
 function Myhiu() {
+    const location = useLocation();
+    const navigate = useNavigate();  // Initialize navigate function
+    const { userDetails } = location.state || {}; // Retrieve userDetails from state
+    const { username, userimg } = userDetails || {}; // Safely access username and userimg
 
-    // ฟังก์ชันสำหรับก็อปปี้ลิงก์
+    // Provide a default profile image in case userimg is not available
+    const defaultProfileImg = "https://via.placeholder.com/60";
+    const profileImageSrc = userimg 
+        ? `data:image/jpeg;base64,${userimg}` 
+        : defaultProfileImg;
+
+    const handleNavigateToAllhiu = () => {
+        navigate('/allhiu', { state: { userDetails } }); 
+    };
+
+    const handleNavigateToAddProduct = () => {
+        navigate('/addproduct', { state: { userDetails } }); // Navigate to Addproduct page
+    };
+
+    // Function to copy link to clipboard
     const handleCopy = () => {
         const link = "https://hiumahai.co.th/nongbosssy";
         navigator.clipboard.writeText(link);
-    }
+    };
 
     return (
         <div className="container">
@@ -17,21 +36,28 @@ function Myhiu() {
             <div className="profile-section">
                 <div className="profile-info">
                     <img
-                        src="https://via.placeholder.com/60"
+                        src={profileImageSrc}
                         alt="Profile"
                         className="profile-image"
                     />
                     <div className="profile-details">
-                        <h2 className="profile-name">nongbosssy</h2>
+                        <h2 className="profile-name">{username || 'User'}</h2>
                         <div className="profile-link-container">
-                            <a href="https://hiumahai.co.th/nongbosssy" className="profile-link">hiumahai.co.th/nongbosssy</a>
+                            <a
+                                href="https://hiumahai.co.th/nongbosssy"
+                                className="profile-link"
+                            >
+                                hiumahai.co.th/nongbosssy
+                            </a>
                             <button className="copy-button" onClick={handleCopy}>
                                 <FontAwesomeIcon icon={faCopy} />
                             </button>
                         </div>
                     </div>
                 </div>
-                <button className="store-button">ดูร้านค้า</button>
+                <button className="store-button" onClick={handleNavigateToAllhiu}>
+                    ดูร้านค้า
+                </button>
             </div>
 
             {/* Order Status Section */}
@@ -63,7 +89,7 @@ function Myhiu() {
 
             {/* Actions Section */}
             <div className="action-section">
-                <button className="action-item">
+                <button className="action-item" onClick={handleNavigateToAddProduct}> {/* Add click handler */}
                     <div className="action-icon">
                         <FontAwesomeIcon icon={faBoxOpen} className="iconmyhiu" />
                     </div>

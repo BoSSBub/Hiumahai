@@ -1,9 +1,12 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // นำเข้า useNavigate
+// Navbarmain.jsx
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { UserContext } from '../components/UserContext'; // Import UserContext
 import './Navbarmain.css';
 
 const Navbarmain = () => {
-  const navigate = useNavigate(); // สร้างตัวแปร navigate
+  const { userDetails } = useContext(UserContext); // Get userDetails from context
+  const navigate = useNavigate();
 
   return (
     <nav className="navbar">
@@ -41,10 +44,11 @@ const Navbarmain = () => {
         </div>
       </div>
       <div className="icons">
-        {/* เปลี่ยนอิโมจิเป็นรูปภาพ shop.png และ user1.png */}
         <button className="iconButton">
           <img src="src/img/shop.png" alt="Shop" className="iconImg" />
         </button>
+        {/* Display user name if logged in */}
+        <p>{userDetails ? userDetails.username : ''}</p>
         <button className="iconButton" onClick={() => navigate('/login')}>
           <img src="src/img/user3.png" alt="User" className="iconImg" />
         </button>

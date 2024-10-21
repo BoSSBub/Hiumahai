@@ -1,97 +1,145 @@
+/* Center the entire container */
+.outer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f5; /* Light background for better contrast */
+}
+
+/* Form container styling */
 .addproduct-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff; /* ปรับแต่งสีตามต้องการ */
+    background-color: #ffffff;
 }
 
 .addproduct-form {
     background-color: #D5CDF3;
-    padding: 20px;
+    padding: 30px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 400px; /* ปรับขนาดตามต้องการ */
+    border-radius: 10px;
+    width: 450px; /* Adjusted width */
     margin-bottom: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
 }
 
-.profile-picture .circle {
-    width: 100px;
-    height: 100px;
+/* Profile picture container */
+.profile-picture {
+    width: 150px;
+    height: 150px;
     background-color: #f4f4f4;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 10px;
-    margin-bottom: 20px;
-    margin-left: 150px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    margin: 0 auto 20px; /* Center the profile picture */
+    border: 2px solid #ddd;
 }
 
+/* Image preview styling */
+.image-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the frame without distortion */
+}
+
+/* Upload button (appears on hover) */
+.profile-picture .circle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.profile-picture:hover .circle {
+    opacity: 1; /* Show button on hover */
+}
+
+/* Form rows */
 .form-row1 {
     display: flex;
-    margin-bottom: 10px;
     align-items: center;
+    margin-bottom: 15px;
 }
 
 .form-row1 label {
-    width: 30%; /* ปรับตามต้องการ */
+    width: 30%; /* Adjust label width */
     margin-right: 10px;
     text-align: left;
+    font-weight: bold;
 }
 
 .form-row1 input, .form-row1 select {
     width: 70%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ccc;
     border-radius: 12px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s, background-color 0.3s;
 }
 
+.form-row1 input:focus, .form-row1 select:focus {
+    border-color: #007bff;
+    background-color: #fff;
+}
+
+/* Select options */
+.form-row1 select option {
+    padding: 0.5rem;
+}
+
+/* Buttons container */
 .buttonsaddproduct {
     display: flex;
-    justify-content: space-between; /* จัดปุ่มให้แยกกันซ้าย-ขวา */
+    justify-content: space-between;
     margin-top: 20px;
-    width: 70%; /* ให้ container ครอบคลุมพื้นที่ทั้งหมด */
-    margin-left: 58px;
+    width: 100%; /* Use full width of the form */
 }
 
+/* Button styling */
 .buttonsaddproduct .cancel-btn, .buttonsaddproduct .save-btn {
     padding: 10px 20px;
     border: none;
-    border-radius: 30px; /* ขอบปุ่มโค้งมน */
-    color: black; /* สีข้อความ */
-    flex: 0 1 48%; /* ปรับให้ปุ่มมีความกว้างเป็น 48% ของ container */
-    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    flex: 0 1 48%; /* Adjust button width */
+    text-align: center;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
+/* Cancel button */
 .cancel-btn {
-    background-color: #FC8585; /* สีพื้นหลังแดงอ่อน */
-    transition: background-color 0.3s; /* เพิ่มการเปลี่ยนสีเมื่อ hover */
+    background-color: #FC8585;
+    color: white;
 }
 
+.cancel-btn:hover {
+    background-color: #f75d5d;
+    transform: scale(1.05); /* Subtle hover effect */
+}
+
+/* Save button */
 .save-btn {
-    background-color: #82E592; /* สีพื้นหลังเขียวอ่อน */
-    transition: background-color 0.3s; /* เพิ่มการเปลี่ยนสีเมื่อ hover */
-}
-.outer-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.form-row1 select {
-    width: 75%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    background-color: #f9f9f9; /* สีพื้นหลังของ select */
-    font-size: 1rem;
-    transition: border-color 0.3s, background-color 0.3s; /* เพิ่ม transition เพื่อให้มีการเปลี่ยนแปลงอย่างนุ่มนวล */
+    background-color: #82E592;
+    color: white;
 }
 
-.form-row1 select:focus {
-    border-color: #007bff; /* สีของ border เมื่อ select อยู่ในสถานะ focus */
-    background-color: #fff; /* สีพื้นหลังเมื่อ select อยู่ในสถานะ focus */
-}
-
-.form-row1 select option {
-    padding: 0.5rem; /* เพิ่ม padding ในแต่ละ option */
+.save-btn:hover {
+    background-color: #5fd36e;
+    transform: scale(1.05);
 }

@@ -4,6 +4,7 @@
   align-items: center;
   background-color: #ffffff;
   margin-top: -8px;
+  margin-left: 34%;
   width: 350px;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -173,7 +174,7 @@
   width: 19px;
   position: absolute;
   top: 76px;
-  left: 202px;
+  left: 214px;
   background-color: transparent;
   border: none;
   color: #000;
