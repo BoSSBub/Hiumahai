@@ -1,28 +1,25 @@
-// UserContext.js
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
   const [userDetails, setUserDetails] = useState(() => {
-    // Try to load from localStorage if available
     const savedUser = localStorage.getItem('userDetails');
     return savedUser ? JSON.parse(savedUser) : null;
   });
 
-  // Save to localStorage whenever userDetails changes
+  const [lastAction, setLastAction] = useState(null); // State to store last action
+
   useEffect(() => {
     if (userDetails) {
       localStorage.setItem('userDetails', JSON.stringify(userDetails));
     } else {
-      localStorage.removeItem('userDetails'); // Remove when user logs out or is null
+      localStorage.removeItem('userDetails');
     }
   }, [userDetails]);
 
-  console.log(userDetails);
-
   return (
-    <UserContext.Provider value={{ userDetails, setUserDetails }}>
+    <UserContext.Provider value={{ userDetails, setUserDetails, lastAction, setLastAction }}>
       {children}
     </UserContext.Provider>
   );
