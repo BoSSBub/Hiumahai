@@ -23,6 +23,7 @@ import ProductDetail from './components/ProductDetail';
 import RegisterSeller from './components/RegisterSeller';
 import Footer from './components/Footer';
 import { UserProvider } from './components/UserContext';  // Import UserProvider
+import Manageproduct from './components/Manageproduct';
 function App() {
   return (
     <UserProvider>
@@ -55,6 +56,8 @@ function App() {
           <Route path="/product/:productId" element={<ProductDetail />} /> {/* Corrected here */}
           <Route path="/nomember" element={<Nomember />} />
           <Route path="/register-seller" element={<RegisterSeller />} />
+          <Route path="/manageproduct" element={<Manageproduct/>} />
+          
 
          
         </Routes>

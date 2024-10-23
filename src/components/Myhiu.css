@@ -57,8 +57,8 @@
 }
 
 .store-button {
-    background-color: #e9d5ff;
-    color: #7c3aed;
+    background-color: #476BB3;
+    color: white;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
 }
@@ -137,10 +137,11 @@
 }
 
 .action-icon {
-    background-color: #fde7e8;
+    background-color: white;
     padding: 1.5rem;
-    border-radius: 50%;
+    border-radius: 50% ;
     margin-bottom: 0.5rem;
+    border :solid 2px #476BB3;
     display: flex;
     align-items: center;
     justify-content: center;

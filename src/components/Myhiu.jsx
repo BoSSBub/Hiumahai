@@ -23,6 +23,9 @@ function Myhiu() {
     const handleNavigateToAddProduct = () => {
         navigate('/addproduct', { state: { userDetails } }); // Navigate to Addproduct page
     };
+    const handleNavigateTomanageproduct = () => {
+        navigate('/manageproduct', { state: { userDetails } }); // Navigate to Addproduct page
+    };
 
     // Function to copy link to clipboard
     const handleCopy = () => {
@@ -95,7 +98,7 @@ function Myhiu() {
                     </div>
                     <p className="action-label">เพิ่มสินค้าใหม่</p>
                 </button>
-                <button className="action-item">
+                <button className="action-item" onClick={handleNavigateTomanageproduct}>
                     <div className="action-icon">
                         <FontAwesomeIcon icon={faShoppingBag} className="iconmyhiu" />
                     </div>

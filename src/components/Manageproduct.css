@@ -1,0 +1,82 @@
+.manageproduct-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .filter-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .filter-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .filter-group select,
+  .filter-group input[type="text"] {
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    width: 250px;
+  }
+  
+  .product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .product-table th, .product-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .product-table th {
+    background-color: #a2bdf1;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .edit-btn {
+    background-color: transparent; /* ทำให้ไม่มีพื้นหลัง */
+    border: 2px solid red; /* ขอบสีแดง */
+    color: red; /* สีของตัวหนังสือ */
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    outline: none; /* ปิดการแสดงขอบสีน้ำเงินเมื่อ hover */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .edit-btn:hover {
+    background-color: red; /* พื้นหลังสีแดงเมื่อ hover */
+    color: white; /* เปลี่ยนสีตัวหนังสือเป็นสีขาวเมื่อ hover */
+    border-color: red; /* ยังคงขอบสีแดง */
+  }
+  
+  
+  
+  .delete-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .icon-bin {
+    width: 20px;
+    height: 20px;
+  }
+  

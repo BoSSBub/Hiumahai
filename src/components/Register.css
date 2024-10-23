@@ -2,34 +2,50 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff; /* ปรับแต่งสีตามต้องการ */
+    background-color: #ffffff;
 }
-.upload-text {
-    font-size: 16px; /* Adjust size as needed */
-    color: #333; /* Change color as needed */
-    text-align: center; /* Center align text */
+
+.upload-text1 {
+    font-size: 16px;
+    color: #333;
+    text-align: center;
 }
 
 .register-form {
     background-color: #E0E1F1;
     padding: 20px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 400px; /* ปรับขนาดตามต้องการ */
+    border-radius: 30px;
+    width: 400px;
     margin-bottom: 40px;
 }
 
-.profile-picture .circle {
-    width: 100px;
-    height: 100px;
+.profile-picture2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-picture2 .circle2 {
+    width: 130px !important; 
+    height: 130px !important;
     background-color: #f4f4f4;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 10px;
-    margin-bottom: 20px;
-    margin-left: 150px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.profile-image2 {
+    width: 130px !important;
+    height: 150px !important;
+    object-fit: cover; /* Ensure the image fits well into the circle */
+    border-radius: 50%;
+    display: block !important; /* บังคับให้รูปภาพแสดงทันที */
 }
 
 .form-row {
@@ -39,7 +55,7 @@
 }
 
 .form-row label {
-    width: 30%; /* ปรับตามต้องการ */
+    width: 30%;
     margin-right: 10px;
     text-align: left;
 }
@@ -55,46 +71,47 @@
 
 .buttonsregister {
     display: flex;
-    justify-content: space-between; /* จัดปุ่มให้แยกกันซ้าย-ขวา */
+    justify-content: space-between;
     margin-top: 20px;
-    width: 70%; /* ให้ container ครอบคลุมพื้นที่ทั้งหมด */
+    width: 70%;
     margin-left: 58px;
 }
 
 .buttonsregister .cancel-btn, .buttonsregister .submit-btn {
     padding: 10px 20px;
     border: none;
-    border-radius: 30px; /* ขอบปุ่มโค้งมน */
-    color: rgb(255, 255, 255); /* สีข้อความ */
-    flex: 0 1 48%; /* ปรับให้ปุ่มมีความกว้างเป็น 48% ของ container */
-    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+    border-radius: 30px;
+    color: white;
+    flex: 0 1 48%;
+    text-align: center;
 }
 
 .cancel-btn {
-    background-color: #D7065D; /* สีพื้นหลังแดงอ่อน */
-    transition: background-color 0.3s; /* เพิ่มการเปลี่ยนสีเมื่อ hover */
+    background-color: #D7065D;
 }
 
 .submit-btn {
-    background-color: #476BB3; /* สีพื้นหลังเขียวอ่อน */
-    transition: background-color 0.3s; /* เพิ่มการเปลี่ยนสีเมื่อ hover */
+    background-color: #476BB3;
 }
+
 .outer-container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .gender-select {
-    width: 220px; /* ตั้งค่าความกว้างของกล่องให้เท่ากับกล่องซ้ายหากมี */
-    text-align-last: left; /* จัดให้ข้อความใน <select> อยู่ด้านซ้าย */
+    width: 220px;
+    text-align-last: left;
     margin-right: -10px;
 }
+
 .input-age {
-    width: 80px; /* กำหนดขนาดความกว้าง */
-    max-width: 40%; /* ป้องกันไม่ให้กว้างเกินไป */
-    padding: 8px; /* กำหนด padding ให้เหมาะสม */
-    font-size: 14px; /* ขนาดฟอนต์ */
-    border-radius: 4px; /* กำหนดมุมมน */
-    border: 1px solid #ccc; /* สีของขอบ */
+    width: 80px;
+    max-width: 40%;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
     margin-left: 81px;
 }

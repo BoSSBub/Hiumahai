@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCopy } from '@fortawesome/free-solid-svg-icons';
 import './Allhiu.css';
 
 function Allhiu() {
@@ -15,11 +13,6 @@ function Allhiu() {
     const [loading, setLoading] = useState(true);  // Loading state
     const [error, setError] = useState(null);  // Error state
 
-    const handleCopy = () => {
-        const link = "https://hiumahai.co.th/nongbosssy";
-        navigator.clipboard.writeText(link);
-    };
-
     // Fetch merchant products when the component mounts
     useEffect(() => {
         const fetchMerchantProducts = async () => {
@@ -30,7 +23,6 @@ function Allhiu() {
                 }
                 const data = await response.json();
                 setMerchantProducts(data);  // Update state with fetched products
-                console.log(data);
             } catch (error) {
                 setError(error.message);  // Update error state
             } finally {
@@ -52,34 +44,32 @@ function Allhiu() {
     }
 
     return (
-        <div className="container">
-            <div className="profile-section">
-                <div className="profile-info">
-                    <img src={profileImageSrc} alt="Profile" className="profile-image" />
-                    <div className="profile-details">
-                        <h2 className="profile-name">{username || 'User'}</h2>
-                        <div className="profile-link-container">
-                            <a href="https://hiumahai.co.th/nongbosssy" className="profile-link">
+        <div className="container1">
+            <div className="profile-section1">
+                <div className="profile-info1">
+                    <img src={profileImageSrc} alt="Profile" className="profile-image1" />
+                    <div className="profile-details1">
+                        <h2 className="profile-name1">{username || 'User'}</h2>
+                        <div className="profile-link-container1">
+                            <a href="https://hiumahai.co.th/nongbosssy" className="profile-link1">
                                 {email}
                             </a>
-                            <button className="copy-button" onClick={handleCopy}>
-                                <FontAwesomeIcon icon={faCopy} />
-                            </button>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div className="title"><h2>รับหิ้วทั้งหมด</h2></div>
-            <div className="orderhiu">
+            <div className="title1"><h2>รับหิ้วทั้งหมด</h2></div>
+            <div className="product-list1">
                 {merchantProducts.length > 0 ? (
                     merchantProducts.map(product => (
-                        <div key={product.ProductId} className="product-card-allhiu">
-                            <img src={`data:image/jpeg;base64,${product.productImg}`} alt={product.productName} className="product-image-allhiu" />
-                            <h3 className="product-name-allhiu">{product.productName}</h3>
-                            <p className="product-detail-allhiu">{product.productDetail}</p>
-                            <p className="product-price-allhiu">ราคา: {product.productPrice} บาท</p>
-                            <img src={`data:image/jpeg;base64,${product.brandImg}`} alt={product.productName} className="product-image-allhiu" />
+                        <div key={product.ProductId} className="product-card1">
+                            <img src={`data:image/jpeg;base64,${product.productImg}`} alt={product.productName} className="product-image1" />
+                            <div className="product-info1">
+                                <img src={`data:image/jpeg;base64,${product.brandImg}`} alt="Brand1" className="brand-image1" />
+                                <h3 className="product-name1">{product.productName}</h3>
+                            </div>
+                            <p className="product-price1">ราคา: {product.productPrice} บาท</p>
                         </div>
                     ))
                 ) : (

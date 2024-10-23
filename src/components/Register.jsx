@@ -13,13 +13,13 @@ function Register() {
         password: '',
         confirmPassword: '',
         profilePicture: null,
-        role: 'user', // Set default role to 'user'
+        role: 'user',
     });
 
     // State to hold the image URL for preview
     const [imagePreviewUrl, setImagePreviewUrl] = useState(null);
-    const [errorMessage, setErrorMessage] = useState(''); // State for error message
-    const navigate = useNavigate(); // Initialize navigate
+    const [errorMessage, setErrorMessage] = useState('');
+    const navigate = useNavigate();
 
     // Handle input changes
     const handleChange = (e) => {
@@ -33,16 +33,17 @@ function Register() {
     // Handle file input
     const handleFileChange = (e) => {
         const file = e.target.files[0];
+        console.log('Selected file:', file); // ตรวจสอบไฟล์ที่เลือก
         setFormData({
             ...formData,
             profilePicture: file,
         });
         
-        // Create a URL for the selected image
         if (file) {
             const reader = new FileReader();
             reader.onloadend = () => {
                 setImagePreviewUrl(reader.result);
+                console.log('Image URL:', reader.result); // ตรวจสอบลิงก์ของรูปภาพที่โหลด
             };
             reader.readAsDataURL(file);
         }
@@ -51,8 +52,7 @@ function Register() {
     // Handle form submission
     const handleSubmit = async (e) => {
         e.preventDefault();
-    
-        // Create a FormData object for file upload
+
         const data = new FormData();
         data.append('Userdetail_name', formData.fullname);
         data.append('Userdetail_age', formData.age);
@@ -65,25 +65,22 @@ function Register() {
         if (formData.profilePicture) {
             data.append('Userimg', formData.profilePicture);
         }
-    
+
         try {
             const response = await fetch('https://localhost:7078/api/Users', {
                 method: 'POST',
                 body: data,
             });
-    
+
             if (response.ok) {
-                // Handle successful registration
                 const result = await response.json();
                 console.log('Registration successful:', result);
-                alert('ลงทะเบียนสำเร็จแล้ว!'); // Success message
-                navigate('/login'); // Redirect to Login page
+                alert('ลงทะเบียนสำเร็จแล้ว!');
+                navigate('/login');
             } else {
-                // Handle errors
                 const errorData = await response.json();
                 console.error('Registration failed:', errorData);
-                setErrorMessage("ลงทะเบียนไม่สำเร็จ"); // Error message
-                // Clear form data if needed
+                setErrorMessage("ลงทะเบียนไม่สำเร็จ");
                 setFormData({
                     fullname: '',
                     age: '',
@@ -96,38 +93,37 @@ function Register() {
                     profilePicture: null,
                     role: 'user',
                 });
-                setImagePreviewUrl(null); // Clear image preview
+                setImagePreviewUrl(null);  // Clear image preview
             }
         } catch (error) {
             console.error('Error during registration:', error);
-            setErrorMessage("เกิดข้อผิดพลาด"); // General error message
+            setErrorMessage("เกิดข้อผิดพลาด");
         }
     };
-    
-    console.log('Form data:', formData);
 
     return (
         <div className="outer-container">
             <div className="register-container">
                 <div className="register-form">
-                    {errorMessage && <div className="error-message">{errorMessage}</div>} {/* Display error message */}
-                    <div className="profile-picture">
+                    {errorMessage && <div className="error-message">{errorMessage}</div>}
+                    <div className="profile-picture2">
                         <input
                             type="file"
                             accept="image/*"
                             onChange={handleFileChange}
                             style={{ display: 'none' }}
-                            id="profilePicture"
+                            id="profilePicture2"
                         />
-                        <label htmlFor="profilePicture" className="circle">
+                        <label htmlFor="profilePicture2" className="circle2">
                             {imagePreviewUrl ? (
                                 <img
                                     src={imagePreviewUrl}
                                     alt="Profile Preview"
-                                    className="profile-image"
+                                    className="profile-image2"
+                                    style={{ display: 'block' }} // Ensure that image is always displayed
                                 />
                             ) : (
-                                <span className="upload-text">+ เพิ่มรูปภาพ</span> // Added span for text
+                                <span className="upload-text1">+ เพิ่มรูปภาพ</span>
                             )}
                         </label>
                     </div>

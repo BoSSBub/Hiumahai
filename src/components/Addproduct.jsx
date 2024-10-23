@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom'; // Import useLocation
+import { useLocation } from 'react-router-dom';
 import './Addproduct.css';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 
-function Addproduct() {
+function Addproduct() { 
     const location = useLocation();
-    const navigate = useNavigate(); // Initialize navigate function
+    const navigate = useNavigate();
     const { userDetails } = location.state || {};
     const userEmail = userDetails?.email || '';
 
@@ -43,8 +43,11 @@ function Addproduct() {
     const handleImageChange = (e) => {
         const file = e.target.files[0];
         if (file) {
+            console.log('Selected file:', file);  // ตรวจสอบว่าไฟล์ถูกเลือก
             setProductImage(file);
-            setImagePreview(URL.createObjectURL(file));
+            const previewUrl = URL.createObjectURL(file);
+            setImagePreview(previewUrl);  // แสดง preview ของรูปภาพ
+            console.log('Image Preview URL:', previewUrl);  // ตรวจสอบ URL ของ preview
         }
     };
 
@@ -102,21 +105,26 @@ function Addproduct() {
         <div className="outer-container">
             <div className="addproduct-container">
                 <div className="addproduct-form">
-                    <div className="profile-picture">
-                        <label htmlFor="file-input" className="circle">
-                            {imagePreview ? (
-                                <img src={imagePreview} alt="Product Preview" className="image-preview" />
-                            ) : (
-                                '+ เพิ่มรูปภาพสินค้า'
-                            )}
-                        </label>
+                    <div className="profile-picture2">
                         <input
-                            id="file-input"
                             type="file"
                             accept="image/*"
                             onChange={handleImageChange}
                             style={{ display: 'none' }}
+                            id="profilePicture2"
                         />
+                        <label htmlFor="profilePicture2" className="circle2">
+                            {imagePreview ? (
+                                <img
+                                    src={imagePreview}
+                                    alt="Product Preview"
+                                    className="profile-image2"
+                                    style={{ display: 'block' }}
+                                />
+                            ) : (
+                                <span className="upload-text1">+ เพิ่มรูปภาพสินค้า</span>
+                            )}
+                        </label>
                     </div>
                     <form onSubmit={handleSubmit}>
                         <div className="form-row1">
