@@ -44,7 +44,7 @@ const Navbarmain = () => {
         </div>
       </div>
       <div className="icons">
-        <button className="iconButton">
+      <button className="iconButton" onClick={() => navigate('/basket')}>
           <img src="src/img/shop.png" alt="Shop" className="iconImg" />
         </button>
         {/* Display user name if logged in */}

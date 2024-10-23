@@ -23,6 +23,12 @@ import ProductDetail from './components/ProductDetail';
 import RegisterSeller from './components/RegisterSeller';
 import Footer from './components/Footer';
 import { UserProvider } from './components/UserContext';  // Import UserProvider
+import Pushcart from './components/Pushcart';
+import Basket from './components/ฺฺBasket';
+import Carryproduct from './components/Carryproduct';
+import Editaddress from './components/Editaddress';
+import Makepayment from './components/Makepayment';
+
 function App() {
   return (
     <UserProvider>
@@ -55,8 +61,11 @@ function App() {
           <Route path="/product/:productId" element={<ProductDetail />} /> {/* Corrected here */}
           <Route path="/nomember" element={<Nomember />} />
           <Route path="/register-seller" element={<RegisterSeller />} />
-
-         
+          <Route path="/Pushcart" element={<Pushcart />} />
+          <Route path="/basket" element={<Basket />} />
+          <Route path="/carryproduct" element={<Carryproduct />} />
+          <Route path="/editaddress" element={<Editaddress />} />
+          <Route path="/makepayment" element={<Makepayment />} />
         </Routes>
         <Footer/>
       </>
