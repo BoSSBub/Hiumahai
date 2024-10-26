@@ -70,7 +70,7 @@ console.log(selectedOption);
     setSelectedOption(event.target.value);
   };
 
-  const handlePushcart = async () => {
+  const handleAddToCart = async () => {
     if (userDetails) { // Check if userDetails exist
       if (selectedUser && product) {
         // Create the procurement DTO
@@ -118,7 +118,7 @@ console.log(selectedOption);
   };
   
 
-  const handleAddToCart = () => {
+  const handlePushcart = () => {
     if (userDetails) { // Check if userDetails exist
       // Logic for adding to cart can be added here
       console.log('Added to cart'); // Example action
