@@ -52,7 +52,7 @@ const Navbarmain = () => {
         <li><Link to="/">หน้าหลัก</Link></li>
         <li><Link to="/promotions">โปรโมชั่น</Link></li>
         <li><Link to="/contact">ติดต่อเรา</Link></li>
-        <li><Link to="/orders">การซื้อของฉัน</Link></li>
+        <li><Link to="/waitingpayment">การซื้อของฉัน</Link></li>
       </ul>
       <div className="searchBar">
         <div className="search-container">

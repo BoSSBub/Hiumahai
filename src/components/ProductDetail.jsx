@@ -71,40 +71,51 @@ console.log(selectedOption);
   };
 
   const handleAddToCart = async () => {
-    if (userDetails) { // Check if userDetails exist
+    if (userDetails) {
       if (selectedUser && product) {
         // Create the procurement DTO
         const procurementDto = {
           Email: userDetails.email,
           MerchantId: selectedUser.merchant_id,
           ProductId: productId, // Use the productId for the product
-          Procurement_select: selectedOption
+          Procurement_select: selectedOption,
         };
   
         try {
-          const response = await fetch('https://localhost:7078/api/Procurement', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(procurementDto),
-          });
+          // Check for existing procurement first
+          const checkResponse = await fetch(`https://localhost:7078/api/Procurement/check?merchantId=${selectedUser.merchant_id}&productId=${productId}`);
+          if (!checkResponse.ok) throw new Error(`Error: ${checkResponse.status} - ${checkResponse.statusText}`);
+          
+          const exists = await checkResponse.json(); // Assuming the response is true/false
   
-          if (!response.ok) throw new Error(`Error: ${response.status} - ${response.statusText}`);
+          if (exists) {
+            // If it exists, navigate to the Basket page
+            navigate('/basket'); // Or wherever the basket component is located
+          } else {
+            // If it doesn't exist, create a new procurement
+            const response = await fetch('https://localhost:7078/api/Procurement', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(procurementDto),
+            });
   
-          // Handle successful response if needed
-          const result = await response.json();
-          console.log('Procurement created:', result);
+            if (!response.ok) throw new Error(`Error: ${response.status} - ${response.statusText}`);
   
-          // Navigate to the pushcart page with the selected information
-          navigate('/pushcart', {
-            state: {
-              email: userDetails.email,
-              merchantId: selectedUser.merchant_id,
-              productId,
-              
-            },
-          });
+            // Handle successful response if needed
+            const result = await response.json();
+            console.log('Procurement created:', result);
+  
+            // Navigate to the pushcart page with the selected information
+            navigate('/pushcart', {
+              state: {
+                email: userDetails.email,
+                merchantId: selectedUser.merchant_id,
+                productId,
+              },
+            });
+          }
         } catch (error) {
           console.error('Failed to create procurement:', error);
           alert('Failed to add to cart. Please try again.'); // Show an error message to the user
@@ -116,6 +127,7 @@ console.log(selectedOption);
       navigate('/login'); // Redirect to login if no userDetails
     }
   };
+  
   
 
   const handlePushcart = () => {

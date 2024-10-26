@@ -30,6 +30,19 @@ import Carryproduct from './components/Carryproduct';
 import Editaddress from './components/Editaddress';
 import Makepayment from './components/Makepayment';
 import Editproduct from './components/editproduct';
+import Waitingpayment from './components/Waitingpayment';
+import Waitingpaymentdetail from './components/Waitingpaymentdetail';
+import Editaddresspayment from './components/Editaddresspayment';
+import Cancelpayment from './components/Cancelpayment';
+import Abrogate from './components/Abrogate';
+import Delivery from './components/Delivery';
+import Deliverydetail from './components/Deliverydetail';
+import Editaddresspaymentdelivery from './components/Editaddresspaymentdelivery';
+import Abrogatedetail from './components/Abrogatedetail';
+import Received from './components/Received';
+import Receiveddetail from './components/Receiveddetail';
+import Complete from './components/Complete';
+import Completedetail from './components/Completedetail';
 
 function App() {
   return (
@@ -70,6 +83,19 @@ function App() {
           <Route path="/editaddress" element={<Editaddress />} />
           <Route path="/makepayment" element={<Makepayment />} />
           <Route path="/editproduct" element={<Editproduct />} />
+          <Route path="/waitingpayment" element={<Waitingpayment />} />
+          <Route path="/waitingpaymentdetail" element={<Waitingpaymentdetail />} />
+          <Route path="/editaddresspayment" element={<Editaddresspayment />} />
+          <Route path="/cancelpayment" element={<Cancelpayment />} />
+          <Route path="/abrogate" element={<Abrogate />} />
+          <Route path="/delivery" element={<Delivery />} />
+          <Route path="/deliverydetail" element={<Deliverydetail />} />
+          <Route path="/editaddresspaymentdelivery" element={<Editaddresspaymentdelivery />} />
+          <Route path="/abrogatedetail" element={<Abrogatedetail />} />
+          <Route path="/received" element={<Received />} />
+          <Route path="/receiveddetail" element={<Receiveddetail />} />
+          <Route path="/complete" element={<Complete />} />
+          <Route path="/completedetail" element={<Completedetail />} />
         </Routes>
         <Footer/>
       </>

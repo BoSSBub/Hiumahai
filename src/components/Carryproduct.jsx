@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import './Carryproduct.css';
 
 function Carryproduct() {
   const location = useLocation();
   const navigate = useNavigate();
   
-  // Destructure parameters from location.state
   const {
     procurement_Email,
     merchant_id,
@@ -64,7 +64,6 @@ function Carryproduct() {
       }
     };
 
-    // Fetch address info if needed
     if (!initialAddressInfo) {
       fetchAddressInfo();
     }
@@ -87,11 +86,37 @@ function Carryproduct() {
   };
 
   // New function to handle payment
-  const handleMakePayment = (totalPrice, procurement_id) => {
-    navigate('/makepayment', { state: { totalPrice, quantity, procurement_id } });
+  const handleMakePayment = async (event, totalPrice, procurement_id) => {
+    event.preventDefault();
+
+    // Prepare form data
+    const formData = new FormData();
+    formData.append('Procurement_id', procurement_id);
+    formData.append('Finance', totalPrice); // Assuming Finance is the field name in your API
+    formData.append('Amount', quantity); // Assuming Amount is the field name in your API
+    formData.append('OrderStatus', 0); // Assuming OrderStatus is the field name in your API
+
+    try {
+      const response = await fetch('https://localhost:7078/api/Procurement/status', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Success:', data);
+        // Redirect to the make payment page with necessary data
+        navigate('/makepayment', { state: {  procurement_Email,merchant_id,merchant_Product_ID,totalPrice, quantity, procurement_id } });
+      } else {
+        console.error('Error:', response.statusText);
+        // Handle error response
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      // Handle network errors
+    }
   };
 
-  // Handle loading and error states
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
 
@@ -136,7 +161,7 @@ function Carryproduct() {
                 <p>ค่าหิ้ว: {item.product_hiu}</p>
                 <p>ค่าส่ง: {item.product_deliver}</p>
                 <p>รวมทั้งหมด: {totalPrice}</p>
-                <button onClick={() => handleMakePayment(totalPrice, item.procurement_id)}>ฝากหิ้วเลยย</button>
+                <button onClick={(event) => handleMakePayment(event, totalPrice, item.procurement_id)}>ฝากหิ้วเลยย</button>
               </li>
             );
           })}

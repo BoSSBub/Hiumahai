@@ -1,0 +1,66 @@
+.main_Cancelpayment {
+    background-color: #f1f4ff;
+    border-radius: 10px;
+    padding: 30px;
+    width: 400px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .main_Cancelpayment h2 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .cancel-button {
+    background-color: #f43b86;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .confirm-button {
+    background-color: #3b86f4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cancel-button:hover {
+    background-color: #d13273;
+  }
+  
+  .confirm-button:hover {
+    background-color: #316bd1;
+  }
+  
