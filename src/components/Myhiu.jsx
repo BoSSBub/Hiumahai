@@ -6,11 +6,10 @@ import './Myhiu.css';
 
 function Myhiu() {
     const location = useLocation();
-    const navigate = useNavigate();  // Initialize navigate function
-    const { userDetails } = location.state || {}; // Retrieve userDetails from state
-    const { username, userimg } = userDetails || {}; // Safely access username and userimg
+    const navigate = useNavigate();  
+    const { userDetails } = location.state || {};
+    const { username, userimg } = userDetails || {}; 
 
-    // Provide a default profile image in case userimg is not available
     const defaultProfileImg = "https://via.placeholder.com/60";
     const profileImageSrc = userimg 
         ? `data:image/jpeg;base64,${userimg}` 
@@ -21,16 +20,19 @@ function Myhiu() {
     };
 
     const handleNavigateToAddProduct = () => {
-        navigate('/addproduct', { state: { userDetails } }); // Navigate to Addproduct page
+        navigate('/addproduct', { state: { userDetails } });
     };
     const handleNavigateTomanageproduct = () => {
-        navigate('/manageproduct', { state: { userDetails } }); // Navigate to Addproduct page
+        navigate('/manageproduct', { state: { userDetails } });
     };
 
-    // Function to copy link to clipboard
     const handleCopy = () => {
         const link = "https://hiumahai.co.th/nongbosssy";
         navigator.clipboard.writeText(link);
+    };
+
+    const handleStatusClick = (page) => {
+        navigate(page, { state: { userDetails } });
     };
 
     return (
@@ -71,19 +73,19 @@ function Myhiu() {
                 </div>
 
                 <div className="status-grid">
-                    <div className="status-item">
+                    <div className="status-item" onClick={() => handleStatusClick('/delivery')}>
                         <div className="status-count">0</div>
                         <p className="status-label">ที่ต้องจัดส่ง</p>
                     </div>
-                    <div className="status-item">
+                    <div className="status-item" onClick={() => handleStatusClick('/cancelled')}>
                         <div className="status-count">0</div>
                         <p className="status-label">ที่ถูกยกเลิก</p>
                     </div>
-                    <div className="status-item">
+                    <div className="status-item" onClick={() => handleStatusClick('/returns')}>
                         <div className="status-count">0</div>
                         <p className="status-label">ที่คืนเงิน/คืนสินค้า</p>
                     </div>
-                    <div className="status-item">
+                    <div className="status-item" onClick={() => handleStatusClick('/reviews')}>
                         <div className="status-count review">3</div>
                         <p className="status-label">รีวิว</p>
                     </div>
@@ -92,7 +94,7 @@ function Myhiu() {
 
             {/* Actions Section */}
             <div className="action-section">
-                <button className="action-item" onClick={handleNavigateToAddProduct}> {/* Add click handler */}
+                <button className="action-item" onClick={handleNavigateToAddProduct}> 
                     <div className="action-icon">
                         <FontAwesomeIcon icon={faBoxOpen} className="iconmyhiu" />
                     </div>

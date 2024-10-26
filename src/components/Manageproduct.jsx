@@ -18,7 +18,7 @@ function Manageproduct() {
   const { userDetails } = location.state || {};
   const email = userDetails?.email;
 
-  // ฟังก์ชันสำหรับดึงข้อมูลสินค้าจาก API
+  // Fetch products data from API
   const fetchProducts = async () => {
     try {
       const response = await fetch(`https://localhost:7078/api/Merchant?email=${email}`);
@@ -26,7 +26,6 @@ function Manageproduct() {
         throw new Error(`Network response was not ok: ${response.statusText}`);
       }
       const data = await response.json();
-      console.log("Products data:", data);  // แสดงข้อมูลสินค้า
       setProducts(data);
     } catch (error) {
       setError(error.message);
@@ -59,7 +58,7 @@ function Manageproduct() {
     fetchBrands();
   }, []);
 
-  // ฟังก์ชันสำหรับการลบสินค้า
+  // Delete product function
   const handleDelete = async (productId, merchantId) => {
     const confirmDelete = window.confirm("คุณต้องการลบสินค้านี้ใช่หรือไม่?");
     if (confirmDelete) {
@@ -70,7 +69,7 @@ function Manageproduct() {
 
         if (response.ok) {
           alert('สินค้าถูกลบเรียบร้อยแล้ว');
-          // อัปเดตข้อมูลสินค้าใหม่หลังจากลบ
+          // Update product list after deletion
           setProducts(products.filter((product) => product.productId !== productId));
         } else {
           const errorData = await response.json();
@@ -83,7 +82,9 @@ function Manageproduct() {
     }
   };
 
+  // Function to navigate to edit product page with product data
   const handleEdit = (product) => {
+    // ส่งข้อมูลสินค้าไปยังหน้า Editproduct
     navigate(`/editproduct`, { state: { product } });
   };
 
@@ -134,7 +135,7 @@ function Manageproduct() {
             <th>แบรนด์</th>
             <th>รายการสินค้า</th>
             <th>ราคา</th>
-            <th>วันที่</th> {/* รวมเป็นคอลัมน์เดียวสำหรับวันที่ */}
+            <th>วันที่สิ้นสุด</th> {/* Column title updated for date */}
             <th>แก้ไขสินค้า</th>
           </tr>
         </thead>
@@ -146,8 +147,12 @@ function Manageproduct() {
                 <td>{product.productName}</td>
                 <td>{product.productPrice} บาท</td>
                 <td>
-                  {product.dateEnd // ใช้ฟิลด์ที่คุณส่งจาก Addproduct
-                    ? new Date(product.dateEnd).toLocaleDateString('th-TH')
+                  {product.date
+                    ? new Date(product.date).toLocaleString('th-TH', { 
+                        year: 'numeric', 
+                        month: 'long', 
+                        day: 'numeric'
+                      })
                     : 'N/A'}
                 </td>
                 <td>
@@ -162,7 +167,7 @@ function Manageproduct() {
             ))
           ) : (
             <tr>
-              <td colSpan="5">ไม่มีข้อมูลสินค้า</td> {/* ปรับ colSpan เป็น 5 เพื่อครอบคลุมทั้งตาราง */}
+              <td colSpan="5">ไม่มีข้อมูลสินค้า</td>
             </tr>
           )}
         </tbody>
