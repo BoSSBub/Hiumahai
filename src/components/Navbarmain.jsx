@@ -85,7 +85,7 @@ const Navbarmain = () => {
           <span className="itemCount">{itemCount}</span>
         </button>
         {/* Display user name if logged in */}
-        <p>{userDetails ? userDetails.username : ''}</p>
+        <div className='accout'>{userDetails ? userDetails.username : ''}</div>
         <button className="iconButton" onClick={() => navigate('/login')}>
           <img src="src/img/user3.png" alt="User" className="iconImg" />
         </button>

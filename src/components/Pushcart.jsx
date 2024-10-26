@@ -8,7 +8,7 @@ const Pushcart = () => {
 
   const { email, merchantId, productId } = location.state || {};
   const [procurementInfo, setProcurementInfo] = useState([]);
-  const [quantities, setQuantities] = useState({}); // Store quantity per product
+  const [quantities, setQuantities] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -27,9 +27,8 @@ const Pushcart = () => {
         const data = await response.json();
         setProcurementInfo(data);
 
-        // Initialize quantities for all products
         const initialQuantities = data.reduce((acc, item) => {
-          acc[item.procurement_id] = 1; // Default quantity to 1
+          acc[item.procurement_id] = 1;
           return acc;
         }, {});
         setQuantities(initialQuantities);
@@ -45,11 +44,9 @@ const Pushcart = () => {
     }
   }, [email, merchantId, productId]);
 
-  // Handle loading and error states
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
 
-  // Increment quantity for a specific product
   const handleIncrement = (id) => {
     setQuantities((prevQuantities) => ({
       ...prevQuantities,
@@ -57,15 +54,13 @@ const Pushcart = () => {
     }));
   };
 
-  // Decrement quantity for a specific product
   const handleDecrement = (id) => {
     setQuantities((prevQuantities) => ({
       ...prevQuantities,
-      [id]: Math.max(prevQuantities[id] - 1, 1), // Ensure quantity stays >= 1
+      [id]: Math.max(prevQuantities[id] - 1, 1),
     }));
   };
 
-  // Handle carry action and navigate to the next page
   const handleCarry = (item) => {
     const quantity = quantities[item.procurement_id];
     const totalPrice = (item.product_price + item.product_hiu + item.product_deliver) * quantity;
@@ -82,7 +77,7 @@ const Pushcart = () => {
   };
 
   return (
-    <div className="pushcart-container">
+    <div className="pushcart-container-pushcart">
       {procurementInfo.length > 0 ? (
         <ul>
           {procurementInfo.map((item) => {
@@ -90,44 +85,64 @@ const Pushcart = () => {
             const totalPrice = (item.product_price + item.product_hiu + item.product_deliver) * quantity;
 
             return (
-              <li key={item.procurement_id}>
-                <div>
-                  <h3>{item.merchant_Product_Email}</h3>
-                  <img
-                    src={`data:image/png;base64,${item.merchant_Userimg}`}
-                    alt={item.merchant_Product_Email}
-                    className="merchant_Userimg"
-                  />
+              <li key={item.procurement_id} className="pushcart-card-pushcart">
+                <div className="merchant-info-pushcart">
+                  <div className="merchant-center-pushcart">
+                    <img
+                      src={`data:image/png;base64,${item.merchant_Userimg}`}
+                      alt={item.merchant_Product_Email}
+                      className="merchant-Userimg-pushcart"
+                    />
+                    <div className="merchant-details-pushcart">
+                      <h3>{item.merchant_Product_Email}</h3>
+                    </div>
+                  </div>
                 </div>
-                <div>
+                <hr className="divider-pushcart" />
+                <div className="product-info-pushcart">
                   <img
                     src={`data:image/png;base64,${item.product_img}`}
                     alt={item.product_name}
-                    className="product_img"
+                    className="product-img-pushcart"
                   />
-                  <h4>{item.product_name}</h4>
-                  <h4>ตัวเลือก: {item.procurement_select}</h4>
-                  <h4>ราคา: {item.product_price}</h4>
-                  <h4>จำนวน:</h4>
-                  <button
-                    onClick={() => handleDecrement(item.procurement_id)}
-                    className="decrement-btn"
-                  >
-                    -
-                  </button>
-                  <span>{quantity}</span>
-                  <button
-                    onClick={() => handleIncrement(item.procurement_id)}
-                    className="increment-btn"
-                  >
-                    +
-                  </button>
+                  <div className="product-details-pushcart">
+                    <h4>{item.product_name}</h4>
+                    <p>ตัวเลือก: {item.procurement_select}</p>
+                    <p className="product-price-pushcart">฿{item.product_price}</p>
+                    <div className="quantity-section-pushcart">
+                      <p className="quantity-label-pushcart">จำนวน</p>
+                      <div className="quantity-control-pushcart">
+                        <button onClick={() => handleDecrement(item.procurement_id)} className="decrement-btn-pushcart">
+                          -
+                        </button>
+                        <span>{quantity}</span>
+                        <button onClick={() => handleIncrement(item.procurement_id)} className="increment-btn-pushcart">
+                          +
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <p>ราคาสินค้า: {item.product_price}</p>
-                <p>ค่าหิ้ว: {item.product_hiu}</p>
-                <p>ค่าส่ง: {item.product_deliver}</p>
-                <p>รวมยอดทั้งหมด: {totalPrice}</p>
-                <button onClick={() => handleCarry(item)}>ฝากหิ้วเลย</button>
+                <hr className="divider-pushcart" />
+                <div className="price-summary-pushcart">
+                  <div className="price-summary-row-pushcart">
+                    <p>ราคาสินค้า</p>
+                    <p>฿{item.product_price}</p>
+                  </div>
+                  <div className="price-summary-row-pushcart">
+                    <p>ค่าหิ้ว</p>
+                    <p>฿{item.product_hiu}</p>
+                  </div>
+                  <div className="price-summary-row-pushcart">
+                    <p>ค่าส่ง</p>
+                    <p>฿{item.product_deliver}</p>
+                  </div>
+                  <div className="price-summary-row-pushcart">
+                    <p className="total-price-label-pushcart">รวมทั้งหมด</p>
+                    <p className="total-price-pushcart">฿{totalPrice}</p>
+                  </div>
+                </div>
+                <button onClick={() => handleCarry(item)} className="carry-btn-pushcart">ฝากหิ้ว</button>
               </li>
             );
           })}

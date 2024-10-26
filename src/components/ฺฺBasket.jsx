@@ -1,15 +1,14 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
-import { UserContext } from '../components/UserContext'; // Import UserContext
-import './Baskets.css';
-
+ import { useNavigate } from "react-router-dom";
+ import { UserContext } from "../components/UserContext";
+ import './Baskets.css';
 function Basket() {
-  const { userDetails } = useContext(UserContext); // Get userDetails from context
+  const { userDetails } = useContext(UserContext);
   const [procurementInfo, setProcurementInfo] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [quantities, setQuantities] = useState({}); // State to hold quantities for each item
-  const navigate = useNavigate(); // Initialize useNavigate
+  const [quantities, setQuantities] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProcurementInfo = async () => {
@@ -27,10 +26,9 @@ function Basket() {
         }
 
         const data = await response.json();
-        // Initialize quantities for each item
         const initialQuantities = {};
         data.forEach(item => {
-          initialQuantities[item.procurement_id] = 1; // Set default quantity to 1
+          initialQuantities[item.procurement_id] = 1;
         });
         setQuantities(initialQuantities);
         setProcurementInfo(data);
@@ -44,11 +42,9 @@ function Basket() {
     fetchProcurementInfo();
   }, [userDetails]);
 
-  // Handle loading and error states
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
 
-  // Function to handle incrementing quantity
   const handleIncrement = (procurement_id) => {
     setQuantities((prevQuantities) => ({
       ...prevQuantities,
@@ -56,70 +52,94 @@ function Basket() {
     }));
   };
 
-  // Function to handle decrementing quantity
   const handleDecrement = (procurement_id) => {
     setQuantities((prevQuantities) => ({
       ...prevQuantities,
-      [procurement_id]: Math.max(1, prevQuantities[procurement_id] - 1) // Prevent quantity from going below 1
+      [procurement_id]: Math.max(1, prevQuantities[procurement_id] - 1)
     }));
   };
 
-  // Function to handle navigation to Carryproduct
   const handleCarry = (item) => {
-    const { procurement_Email, merchant_id, merchant_Product_ID } = item; // Extract necessary fields
-    const quantity = quantities[item.procurement_id]; // Get quantity for this item
-    const totalPrice = (item.product_price + item.product_hiu + item.product_deliver) * quantity; // Calculate total price
+    const { procurement_Email, merchant_id, merchant_Product_ID } = item;
+    const quantity = quantities[item.procurement_id];
+    const totalPrice = (item.product_price + item.product_hiu + item.product_deliver) * quantity;
 
     navigate('/carryproduct', {
       state: {
         procurement_Email,
-        merchant_id,    
+        merchant_id,
         merchant_Product_ID,
-        quantity, // Pass the quantity
-        totalPrice // Pass the total price
+        quantity,
+        totalPrice
       }
     });
   };
 
   return (
-    <div className="basket-container">
+    <div className="pushcart-container-basket">
       {procurementInfo && procurementInfo.length > 0 ? (
-        <ul>
+        <div className="pushcart-list-basket">
           {procurementInfo.map(item => {
-            const totalPrice = (item.product_price + item.product_hiu + item.product_deliver) * quantities[item.procurement_id]; // Calculate total price
+            const totalPrice = (item.product_price + item.product_hiu + item.product_deliver) * quantities[item.procurement_id];
             return (
-              <li key={item.procurement_id}>
-                <div>
-                  <h3>{item.merchant_Product_Email}</h3>
-                  <img 
-                    src={`data:image/png;base64,${item.merchant_Userimg}`} 
-                    alt={item.merchant_Product_Email} 
-                    className="merchant_Userimg" 
-                  />
+              <div key={item.procurement_id} className="pushcart-card-basket">
+                <div className="merchant-info-basket">
+                  <div className="merchant-center-basket">
+                    <img 
+                      src={`data:image/png;base64,${item.merchant_Userimg}`} 
+                      alt={item.merchant_Product_Email} 
+                      className="merchant-Userimg-basket" 
+                    />
+                    <div className="merchant-details-basket">
+                      <h3>{item.merchant_Product_Email}</h3>
+                    </div>
+                  </div>
                 </div>
-                <div>
+                <hr className="divider-basket" />
+                <div className="product-info-basket">
                   <img 
                     src={`data:image/png;base64,${item.product_img}`} 
                     alt={item.product_name} 
-                    className="product_img" 
+                    className="product-img-basket" 
                   />
-                  <h4>{item.product_name}</h4>
-                  <h4>ตัวเลือก: {item.procurement_select}</h4>
-                  <h4>ราคา: {item.product_price}</h4>
-                  <h4>จำนวน:</h4>
-                  <button onClick={() => handleDecrement(item.procurement_id)} className="decrement-btn">-</button>
-                  <span>{quantities[item.procurement_id]}</span>
-                  <button onClick={() => handleIncrement(item.procurement_id)} className="increment-btn">+</button>
+                  <div className="product-details-basket">
+                    <h4>{item.product_name}</h4>
+                    <p>ตัวเลือก: {item.procurement_select}</p>
+                    <p className="product-price-basket">ราคา: ฿{item.product_price}</p>
+                    <div className="quantity-section-basket">
+                      <p className="quantity-label-basket">จำนวน:</p>
+                      <div className="quantity-control-basket">
+                        <button onClick={() => handleDecrement(item.procurement_id)} className="decrement-btn-basket">-</button>
+                        <span>{quantities[item.procurement_id]}</span>
+                        <button onClick={() => handleIncrement(item.procurement_id)} className="increment-btn-basket">+</button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <p>ราคาสินค้า: {item.product_price}</p>
-                <p>ค่าหิ้ว: {item.product_hiu}</p>
-                <p>ค่าส่ง: {item.product_deliver}</p>
-                <p>รวมยอดทั้งหมด: {totalPrice}</p> {/* New paragraph for total cost */}
-                <button onClick={() => handleCarry(item)}>ฝากหิ้วเลย</button> {/* Handle carry */}
-              </li>
+                <hr className="divider-basket" />
+                <div className="price-summary-basket">
+                  <div className="price-summary-row-basket">
+                    <p>ราคาสินค้า</p>
+                    <p>฿{item.product_price}</p>
+                  </div>
+                  <div className="price-summary-row-basket">
+                    <p>ค่าหิ้ว</p>
+                    <p>฿{item.product_hiu}</p>
+                  </div>
+                  <div className="price-summary-row-basket">
+                    <p>ค่าส่ง</p>
+                    <p>฿{item.product_deliver}</p>
+                  </div>
+                  <div className="price-summary-row-basket">
+                    <p className="total-price-label-basket">รวมทั้งหมด</p>
+                    <p className="total-price-basket">฿{totalPrice}</p>
+                  </div>
+                </div>
+                <button onClick={() => handleCarry(item)} className="carry-btn-basket">ฝากหิ้วเลย</button>
+              </div>
             );
           })}
-        </ul>
+        </div>
       ) : (
         <p>No procurement info found.</p>
       )}

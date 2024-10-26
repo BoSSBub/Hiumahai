@@ -1,0 +1,99 @@
+.addproduct-container-editproduct {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff; /* ปรับแต่งสีตามต้องการ */
+}
+
+.addproduct-form-editproduct {
+    background-color: #D5CDF3;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 400px; /* ปรับขนาดตามต้องการ */
+    margin-bottom: 40px;
+}
+
+.profile-picture-editproduct .circle-editproduct {
+    width: 100px;
+    height: 100px;
+    background-color: #f4f4f4;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    margin-bottom: 20px;
+    margin-left: 150px;
+}
+
+.form-row-editproduct {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.form-row-editproduct label {
+    width: 30%; /* ปรับตามต้องการ */
+    margin-right: 10px;
+    text-align: left;
+}
+
+.form-row-editproduct input, .form-row-editproduct select {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+}
+
+.buttonsaddproduct-editproduct {
+    display: flex;
+    justify-content: space-between; /* จัดปุ่มให้แยกกันซ้าย-ขวา */
+    margin-top: 20px;
+    width: 70%; /* ให้ container ครอบคลุมพื้นที่ทั้งหมด */
+    margin-left: 58px;
+}
+
+.buttonsaddproduct-editproduct .cancel-btn-editproduct, .buttonsaddproduct-editproduct .save-btn-editproduct {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px; /* ขอบปุ่มโค้งมน */
+    color: black; /* สีข้อความ */
+    flex: 0 1 48%; /* ปรับให้ปุ่มมีความกว้างเป็น 48% ของ container */
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+}
+
+.cancel-btn-editproduct {
+    background-color: #FC8585; /* สีพื้นหลังแดงอ่อน */
+    transition: background-color 0.3s; /* เพิ่มการเปลี่ยนสีเมื่อ hover */
+}
+
+.save-btn-editproduct {
+    background-color: #82E592; /* สีพื้นหลังเขียวอ่อน */
+    transition: background-color 0.3s; /* เพิ่มการเปลี่ยนสีเมื่อ hover */
+}
+
+.outer-container-editproduct {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-row-editproduct select {
+    width: 75%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    background-color: #f9f9f9; /* สีพื้นหลังของ select */
+    font-size: 1rem;
+    transition: border-color 0.3s, background-color 0.3s; /* เพิ่ม transition เพื่อให้มีการเปลี่ยนแปลงอย่างนุ่มนวล */
+}
+
+.form-row-editproduct select:focus {
+    border-color: #007bff; /* สีของ border เมื่อ select อยู่ในสถานะ focus */
+    background-color: #fff; /* สีพื้นหลังเมื่อ select อยู่ในสถานะ focus */
+}
+
+.form-row-editproduct select option {
+    padding: 0.5rem; /* เพิ่ม padding ในแต่ละ option */
+}

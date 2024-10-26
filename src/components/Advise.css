@@ -6,7 +6,7 @@
   overflow: hidden;
   margin: 20px 0;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  background-color: white;
+  background-color: #D0D0D5;
   border: 5px solid #d0d0d5; /* เพิ่มกรอบหนาสีชมพู */
 }
 
@@ -14,7 +14,7 @@
 .Advise-image-section {
   position: relative;
   width: 50%;
-  background-color: #f5f5f5;
+  background-color: #D0D0D5;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,12 +47,12 @@
   padding: 20px;
   width: 50%;
   color: black;
-  background-color: #ffeaff; /* สีพื้นหลังอ่อน */
+  background-color:white; /* สีพื้นหลังอ่อน */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-align: left;
-  border-left: 5px solid #ffd6f4;
+  border-left: 5px solid #D0D0D5;
 }
 
 /* ชื่อสินค้า */

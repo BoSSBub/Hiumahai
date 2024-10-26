@@ -2,7 +2,7 @@
 .container {
     color: black;
     padding: 1.5rem;
-    width: 1200px;
+    max-width: 1200px; /* ปรับให้เป็น max-width เพื่อให้ responsive */
     margin: 0 auto;
 }
 
@@ -57,10 +57,17 @@
 }
 
 .store-button {
-    background-color: #e9d5ff;
-    color: #7c3aed;
+    background-color: #476BB3;
+    color: white;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
+    cursor: pointer; /* เพิ่ม cursor pointer */
+    border: none; /* ลบ border */
+    transition: background-color 0.3s ease; /* เพิ่มเอฟเฟ็กต์เปลี่ยนสี */
+}
+
+.store-button:hover {
+    background-color: #35558f; /* สีใหม่เมื่อ hover */
 }
 
 /* Order Status Section */
@@ -100,6 +107,12 @@
 .status-item {
     text-align: center;
     flex: 1;
+    cursor: pointer; /* เพิ่ม cursor pointer เมื่อ hover */
+    transition: transform 0.3s ease; /* เพิ่มเอฟเฟ็กต์ */
+}
+
+.status-item:hover {
+    transform: translateY(-5px); /* ยกขึ้นเล็กน้อยเมื่อ hover */
 }
 
 .status-count {
@@ -116,6 +129,7 @@
 
 .status-label {
     font-size: 0.875rem;
+    margin-top: 0.5rem; /* เพิ่ม margin-top เพื่อให้มีระยะห่างกับตัวเลข */
 }
 
 /* Actions Section */
@@ -134,27 +148,33 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
+    transition: transform 0.3s ease; /* เพิ่มเอฟเฟ็กต์เมื่อ hover */
+}
+
+.action-item:hover {
+    transform: scale(1.05); /* ขยายขนาดเมื่อ hover */
 }
 
 .action-icon {
-    background-color: #fde7e8;
+    background-color: white;
     padding: 1.5rem;
     border-radius: 50%;
     margin-bottom: 0.5rem;
+    border: solid 2px #476BB3;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 60px;  /* กำหนดขนาดวงกลม */
+    width: 60px;
     height: 60px;
-    position: relative; /* ปรับตำแหน่งให้สัมพันธ์กับไอคอน */
+    position: relative;
 }
 
 .iconmyhiu {
-    font-size: 2rem; /* ใช้ขนาดไอคอนที่เหมาะสม */
-    position: absolute; /* ปรับตำแหน่งของไอคอน */
+    font-size: 2rem;
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* ทำให้ไอคอนอยู่กลางวงกลม */
+    transform: translate(-50%, -50%);
 }
 
 .action-label {

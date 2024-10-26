@@ -6,6 +6,10 @@
 .menu a:hover {
   color: #555; /* Change color on hover to give feedback */
 }
+.accout{
+  color: white;
+  margin-top: 20px;
+}
 
 /* Other styles remain unchanged */
 .navbar {
