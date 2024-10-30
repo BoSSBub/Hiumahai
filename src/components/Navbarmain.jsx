@@ -82,7 +82,7 @@ const Navbarmain = () => {
         <button className="iconButton" onClick={() => navigate('/basket')}>
           <img src="src/img/shop.png" alt="Shop" className="iconImg" />
           {/* Show item count in the basket icon */}
-          <span className="itemCount">{itemCount}</span>
+          <span style={{ color: '#D7065D' }} className="itemCount">{itemCount}</span>
         </button>
         {/* Display user name if logged in */}
         <div className='accout'>{userDetails ? userDetails.username : ''}</div>

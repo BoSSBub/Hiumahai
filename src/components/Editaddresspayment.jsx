@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import Selectstatus from './Selectstatus';
+import './Editaddresspayment.css';
+import mapIcon from '../img/map.png'; // Update the path as needed
+
 function Editaddresspayment() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -37,7 +39,7 @@ function Editaddresspayment() {
       navigate('/waitingpaymentdetail', { 
         state: { 
           addressInfo: updatedAddress, 
-          procurement_id: procurementDetails[0]?.procurement_id // Ensure procurement_id is passed back
+          procurement_id: procurementDetails[0]?.procurement_id 
         } 
       });
     } catch (err) {
@@ -46,42 +48,47 @@ function Editaddresspayment() {
   };
 
   return (
-    <div>
-      <Selectstatus/>
-    <div>
-      <h1>Edit Address</h1>
-      {addressInfo ? (
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label>Phone:</label>
-            <input
-              type="text"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-            />
-          </div>
-          <div>
-            <label>Address:</label>
-            <input
-              type="text"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-            />
-          </div>
-          <div>
-            <label>Address Name:</label>
-            <input
-              type="text"
-              value={addressName}
-              onChange={(e) => setAddressName(e.target.value)}
-            />
-          </div>
-          <button type="submit">Update Address</button>
-        </form>
-      ) : (
-        <p>No address info available.</p>
-      )}
-    </div>
+    <div className="editaddress-container">
+      <div className="editaddress-form-container">
+        <div className="editaddress-title">
+          <img src={mapIcon} alt="map icon" className="editaddress-icon" />
+          ที่อยู่สำหรับจัดส่ง
+        </div>
+        {addressInfo ? (
+          <form onSubmit={handleSubmit} className="editaddress-form">
+            <div className="editaddress-field">
+              <span className="editaddress-label">ชื่อ-นามสกุล:</span>
+              <input
+                type="text"
+                value={addressName}
+                onChange={(e) => setAddressName(e.target.value)}
+                className="editaddress-input"
+              />
+            </div>
+            <div className="editaddress-field">
+              <span className="editaddress-label">หมายเลขโทรศัพท์:</span>
+              <input
+                type="text"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                className="editaddress-input"
+              />
+            </div>
+            <div className="editaddress-field">
+              <span className="editaddress-label">ที่อยู่:</span>
+              <textarea
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+                className="editaddress-textarea"
+                rows="2"
+              ></textarea>
+            </div>
+            <button type="submit" className="editaddress-submit-button">ยืนยัน</button>
+          </form>
+        ) : (
+          <p className="editaddress-noinfo">No address info available.</p>
+        )}
+      </div>
     </div>
   );
 }

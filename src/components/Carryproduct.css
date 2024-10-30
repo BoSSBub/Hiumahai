@@ -1,3 +1,278 @@
-.pushcart-container{
-    color: black;
-}
+h5 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #476BB3;
+    margin-bottom: 10px;
+    padding-left: 15px;
+  }
+  
+  .address-card {
+    background-color: #E0E1F1;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 600px;
+    position: relative;
+    margin-left: 25%;
+  }
+  
+  .address-header {
+    display: flex;
+    align-items: center;
+  }
+  
+  .address-icon {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+  }
+  
+  .edit-button-address {
+    color: #D7065D;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9em;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+  }
+  
+  .address-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .name-address {
+    font-weight: bold;
+    font-size: 1em;
+    margin: 0;
+    color: #333;
+  }
+  
+  .details-address,
+  .phone-address {
+    margin: 4px 0;
+    color: #666;
+    font-size: 0.9em;
+  }
+  
+  .procurement-card {
+    background-color: #E0E1F1;
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 2%;
+  }
+  
+  .section-merchant {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    margin-left: 18%;
+  }
+  
+  image-merchant {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  name-merchant {
+    font-weight: bold;
+    font-size: 1em;
+    color: #333;
+  }
+  
+  .section-product {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  image-product {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  info-product {
+    flex-grow: 1;
+  }
+  
+  name-product {
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+  }
+  
+  select-product,
+  amount-product {
+    color: #666;
+    font-size: 0.9em;
+  }
+  
+  highlight-text {
+    color: #D7065D;
+  }
+  
+  price-product {
+    color: #D7065D;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  summary-pricing {
+    padding-top: 10px;
+  }
+  
+  item-pricing {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    color: #666;
+    font-size: 0.9em;
+  }
+  
+  price-total {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  highlight-total {
+    color: #D7065D;
+  }
+  
+  divider {
+    display: none;
+  }
+  
+  divider-thick {
+    width: 100%;
+    height: 2px;
+    background-color: #333333;
+    margin: 10px 0;
+    opacity: 0.5;
+  }
+  
+  .payment-card-summary {
+    display: flex;
+    align-items: center;
+    border: 1px solid #476BB3;
+    border-radius: 20px;
+    padding: 10px 15px;
+    max-width: 600px;
+    background-color: #ffffff;
+    margin-top: 1%;
+    margin-left: 26%;
+  }
+  
+  icon-payment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  icon-image-payment {
+    width: 100%;
+    height: 100%;
+  }
+  
+  label-payment {
+    flex-grow: 1;
+    font-weight: bold;
+    color: #476BB3;
+    margin: 0;
+  }
+  
+  amount-payment {
+    font-weight: bold;
+    color: #476BB3;
+    margin: 0;
+  }
+  
+  .container-button-carry {
+    display: flex;
+    gap: 10px;
+    margin-top: 1%;
+    margin-left: 35%;
+  }
+  
+  .button-pay-carry {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1em;
+    width: 180px;
+    background-color: #476BB3; /* สีของปุ่มฝากหิ้วเลยย */
+    margin-left: 14%;
+  }
+  
+  .button-cancel-waiting {
+    background-color: #D7065D;
+  }
+  
+  .procurement-item {
+    list-style-type: none; /* ซ่อน marker */
+  }
+  .payment-summary-card-carry {
+    display: flex;
+    align-items: center;
+    border: 1px solid #476BB3; /* Blue border color */
+    border-radius: 20px;
+    padding: 10px 15px;
+    max-width: 600px;
+    background-color: #ffffff;
+    margin-top: 1%;
+    width: 500px;
+    margin-top: 1%;
+    margin-left: 29.5%;
+  }
+  
+  .payment-icon-carry {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .icon-image-payment-carry {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .payment-label-carry{
+    flex-grow: 1;
+    font-weight: bold;
+    color: #476BB3; /* Same blue color */
+    text-align: start;
+  }
+  
+  .payment-amount-carry {
+    font-weight: bold;
+    color: #476BB3;
+    margin: 0;
+  }
+  

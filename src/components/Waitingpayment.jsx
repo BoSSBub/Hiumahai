@@ -1,4 +1,3 @@
-// Waitingpayment.js
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './Waitingpayment.css';
@@ -39,28 +38,38 @@ function Waitingpayment() {
   return (
     <div>
       <Selectstatus />
-      <div className='main_Waitingpayment'>
-        <h1>Waiting for Payment</h1>
-        {error && <p>Error: {error}</p>}
+      <div className="main-waitingpayment">
+        {error && <p className="error-waitingpayment">Error: {error}</p>}
         {loading ? (
-          <p>Loading...</p>
+          <p className="loading-waitingpayment">Loading...</p>
         ) : (
-          <div>
+          <div className="procurement-list-waitingpayment">
             {procurementDetails.length > 0 ? (
               <ul>
                 {procurementDetails.map((detail) => (
-                  <li key={detail.procurement_id}>
-                    <h3>{detail.product_name}</h3>
-                    {detail.product_img && (
-                      <img src={`data:image/jpeg;base64,${detail.product_img}`} alt={detail.product_name} />
-                    )}
-                    <p>รอจ่ายเงิน</p>
-                    <button onClick={() => handlePayment(detail.procurement_id)}>เปลี่ยนด้วยนะเป็นกด class แทนเหมือนใน figma</button>
+                  <li key={detail.procurement_id} className="procurement-item-waitingpayment">
+                    <img
+                      src={`data:image/jpeg;base64,${detail.product_img}`}
+                      alt={detail.product_name}
+                      className="product-image-waitingpayment"
+                    />
+                    <div className="product-info-waitingpayment">
+                      <h3 className="product-name-waitingpayment">{detail.product_name}</h3>
+                    </div>
+                    <div className="action-container-waitingpayment">
+                      <button
+                        className="payment-button-waitingpayment"
+                        onClick={() => handlePayment(detail.procurement_id)}
+                      >
+                        &gt;
+                      </button>
+                      <p className="product-status-waitingpayment">รอจ่ายเงิน</p>
+                    </div>
                   </li>
                 ))}
               </ul>
             ) : (
-              <p>No procurement details available.</p>
+              <p className="no-details-waitingpayment">No procurement details available.</p>
             )}
           </div>
         )}

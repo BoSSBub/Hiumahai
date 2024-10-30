@@ -95,7 +95,7 @@ function Basket() {
                     </div>
                   </div>
                 </div>
-                <hr className="divider-basket" />
+                <div className="divider-thick"></div>
                 <div className="product-info-basket">
                   <img 
                     src={`data:image/png;base64,${item.product_img}`} 
@@ -105,7 +105,7 @@ function Basket() {
                   <div className="product-details-basket">
                     <h4>{item.product_name}</h4>
                     <p>ตัวเลือก: {item.procurement_select}</p>
-                    <p className="product-price-basket">ราคา: ฿{item.product_price}</p>
+                    <p1 className="product-price-basket">ราคา: ฿{item.product_price}</p1>
                     <div className="quantity-section-basket">
                       <p className="quantity-label-basket">จำนวน:</p>
                       <div className="quantity-control-basket">
@@ -116,7 +116,7 @@ function Basket() {
                     </div>
                   </div>
                 </div>
-                <hr className="divider-basket" />
+                <div className="divider-thick"></div>
                 <div className="price-summary-basket">
                   <div className="price-summary-row-basket">
                     <p>ราคาสินค้า</p>
@@ -130,6 +130,7 @@ function Basket() {
                     <p>ค่าส่ง</p>
                     <p>฿{item.product_deliver}</p>
                   </div>
+                  <div className="divider-thick"></div>
                   <div className="price-summary-row-basket">
                     <p className="total-price-label-basket">รวมทั้งหมด</p>
                     <p className="total-price-basket">฿{totalPrice}</p>

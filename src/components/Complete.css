@@ -1,14 +1,14 @@
-.main-abrogate {
+.main-complete {
     padding: 20px;
 }
 
-.procurement-list-abrogate {
+.procurement-list-complete {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-.procurement-item-abrogate {
+.procurement-item-complete {
     display: flex;
     align-items: center;
     background-color: #E0E1F1;
@@ -17,12 +17,11 @@
     margin-bottom: 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     max-width: 75%;
-    align-items: center;
     margin-left: 10%;
     height: 120px;
 }
 
-.product-image-abrogate {
+.product-image-complete {
     width: 200px;
     height: 120px;
     border-radius: 10px;
@@ -31,11 +30,11 @@
     margin-left: 10%;
 }
 
-.product-info-abrogate {
+.product-info-complete {
     flex-grow: 1;
 }
 
-.product-name-abrogate {
+.product-name-complete {
     font-size: 1rem;
     font-weight: 500;
     color: #333;
@@ -43,13 +42,13 @@
     margin-bottom: 12%;
 }
 
-.action-container-abrogate {
+.action-container-complete {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.action-button-abrogate {
+.payment-button-complete {
     background: none;
     border: none;
     font-size: 1.5rem;
@@ -57,17 +56,17 @@
     cursor: pointer;
 }
 
-.product-status-abrogate {
+.status-complete {
     font-size: 0.875rem;
     color: #666;
     margin-top: 5px; /* เพิ่มระยะห่างระหว่างปุ่มและข้อความ */
 }
 
-.action-button-abrogate:hover {
+.payment-button-complete:hover {
     color: #000;
 }
 
-.loading-abrogate, .error-abrogate, .no-details-abrogate {
+.loading-complete, .error-complete, .no-details-complete {
     text-align: center;
     font-size: 1rem;
     color: #666;

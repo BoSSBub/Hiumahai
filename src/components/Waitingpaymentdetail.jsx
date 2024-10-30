@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './Waitingpaymentdetail.css';
 import Selectstatus from './Selectstatus';
+import mapIcon from '../img/map.png';
+import dollarIcon from '../img/dollar.png'; // Adjust the path as needed
+
 function Waitingpaymentdetail() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { procurement_id, addressInfo: updatedAddressInfo } = location.state || {}; 
+  const { procurement_id, addressInfo: updatedAddressInfo } = location.state || {};
 
   const [procurementDetails, setProcurementDetails] = useState(null);
   const [address, setAddress] = useState(updatedAddressInfo || null);
@@ -60,11 +63,11 @@ function Waitingpaymentdetail() {
   }, [procurementDetails, updatedAddressInfo]);
 
   const handleEditAddress = () => {
-    navigate('/editaddresspayment', { 
-      state: { 
-        addressInfo: address, 
-        procurementDetails 
-      } 
+    navigate('/editaddresspayment', {
+      state: {
+        addressInfo: address,
+        procurementDetails
+      }
     });
   };
 
@@ -89,44 +92,93 @@ function Waitingpaymentdetail() {
 
   return (
     <div>
-      <Selectstatus/>
-    <div className='main_Waitingpaymentdetail'>
-      <h1>Waiting Payment Detail</h1>
-      {loading && <p>Loading...</p>}
-      {error && <p>Error: {error}</p>}
-      {address && (
-        <div>
-          <h3>Merchant Address</h3>
-          <p><strong>ชื่อ:</strong> {address.addres_name}</p>
-          <p><strong>ที่อยู่:</strong> {address.addres}</p>
-          <p><strong>เบอร์:</strong> {address.addresl_Phone}</p>
-          <button onClick={handleEditAddress}>แก้ไข</button>
-        </div>
-      )}
-      {procurementDetails && (
-        <>
-          <div>
-            <img src={`data:image/jpeg;base64,${procurementDetails[0].merchant_img}`} alt="Merchant" />
-            <p>Merchant Email: {procurementDetails[0].merchant_Email}</p>
+      <Selectstatus />
+      <div className="main_Waitingpaymentdetail">
+        <h5>รายละเอียดฝากหิ้วสินค้า</h5>
+        {loading && <p>Loading...</p>}
+        {error && <p>Error: {error}</p>}
+        {address && (
+          <div className="address-card">
+            <div className="address-header">
+              <img src={mapIcon} alt="Map Icon" className="address-icon" />
+              <button className="address-edit-button" onClick={handleEditAddress}>แก้ไข</button>
+            </div>
+            <div className="address-content">
+              <p className="address-name"> {address.addres_name}</p>
+              <p className="address-details"> {address.addres}</p>
+              <p className="address-phone"> {address.addresl_Phone}</p>
+            </div>
           </div>
-          <div>
-            <img src={`data:image/jpeg;base64,${procurementDetails[0].product_img}`} alt={procurementDetails[0].product_name} />
-            <p>Product Name: {procurementDetails[0].product_name}</p>
-            <p>ตัวเลือก: {procurementDetails[0].procurement_select}</p>
-            <p>จำนวน: {procurementDetails[0].amount}</p>
-            <p>ราคาสินค้า: {procurementDetails[0].product_price}</p>
-            <p>ราคาหิ้ว: {procurementDetails[0].product_hiu}</p>
-            <p>ราคาส่ง: {procurementDetails[0].product_deliver}</p>
-            <p>รวม: {procurementDetails[0].finance}</p>
-          </div>
-          <div>
-            <button onClick={handleCancel}>ยกเลิก</button>
-            <button onClick={handleMakePayment}>ชำระเงิน</button>
-          </div>
-        </>
-      )}
-    </div>
-    </div>
+        )}
+        {procurementDetails && (
+          <>
+            <div className="procurement-card">
+              <div className="merchant-section">
+                <img
+                  src={`data:image/jpeg;base64,${procurementDetails[0].merchant_img}`}
+                  alt="Merchant"
+                  className="merchant-image"
+                />
+                <p className="merchant-name"> {procurementDetails[0].merchant_Email}</p>
+              </div>
+
+              <div className="divider-thick"></div> {/* Thicker divider before total */}
+
+              <div className="product-section">
+                <img
+                  src={`data:image/jpeg;base64,${procurementDetails[0].product_img}`}
+                  alt={procurementDetails[0].product_name}
+                  className="product-image"
+                />
+                <div className="product-info">
+                  <p className="product-name">{procurementDetails[0].product_name}</p>
+                  <p className="product-select">ตัวเลือก: <span className="highlight">{procurementDetails[0].procurement_select}</span></p>
+                  <p className="product-amount">จำนวน <span className="highlight">{procurementDetails[0].amount}</span></p>
+                </div>
+                <p className="product-price">฿{procurementDetails[0].product_price}</p>
+              </div>
+
+              <div className="divider-thick"></div> {/* Thicker divider before total */}
+
+              <div className="pricing-summary">
+                <div className="pricing-item">
+                  <span>ราคาสินค้า</span>
+                  <span>฿{procurementDetails[0].product_price}</span>
+                </div>
+                <div className="pricing-item">
+                  <span>ค่าหิ้ว</span>
+                  <span>฿{procurementDetails[0].product_hiu}</span>
+                </div>
+                <div className="pricing-item">
+                  <span>ค่าส่ง</span>
+                  <span>฿{procurementDetails[0].product_deliver}</span>
+                </div>
+
+                <div className="divider-thick"></div> {/* Thicker divider before total */}
+
+                <div className="total-price">
+                  <span>รวมทั้งหมด</span>
+                  <span className="highlight-total">฿{procurementDetails[0].finance}</span>
+                </div>
+              </div>
+            </div>
+            <div className="payment-summary-card">
+              <div className="payment-icon">
+                <img src={dollarIcon} alt="Icon" className="icon-image-payment" />
+              </div>
+
+              <p className="payment-label">ค้างชำระ</p>
+              <p className="payment-amount">฿{procurementDetails[0].finance}</p>
+            </div>
+            <div className="button-container">
+              <button className="cancel-button-waiting" onClick={handleCancel}>ยกเลิกคำสั่งซื้อ</button>
+              <button className="pay-button-waiting" onClick={handleMakePayment}>ชำระเงิน</button>
+            </div>
+
+          </>
+        )}
+      </div>
+    </div >
   );
 }
 

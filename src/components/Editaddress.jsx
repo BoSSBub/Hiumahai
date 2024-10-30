@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import './Editaddresspayment.css'; // Ensure to use the correct CSS file
 
 function Editaddress() {
   const location = useLocation();
@@ -49,42 +50,46 @@ function Editaddress() {
   };
 
   return (
-    <div>
-      <h1>Edit Address</h1>
-      {addressInfo ? (
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label>Phone:</label>
-            <input
-              type="text"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-            />
-          </div>
-
-          <div>
-            <label>Address:</label>
-            <input
-              type="text"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-            />
-          </div>
-
-          <div>
-            <label>Address Name:</label>
-            <input
-              type="text"
-              value={addressName}
-              onChange={(e) => setAddressName(e.target.value)}
-            />
-          </div>
-
-          <button type="submit">Update Address</button>
-        </form>
-      ) : (
-        <p>No address info available.</p>
-      )}
+    <div className="editaddress-container">
+      <div className="editaddress-form-container">
+        <div className="editaddress-title">
+          ที่อยู่สำหรับจัดส่ง
+        </div>
+        {addressInfo ? (
+          <form onSubmit={handleSubmit} className="editaddress-form">
+            <div className="editaddress-field">
+              <span className="editaddress-label">หมายเลขโทรศัพท์:</span>
+              <input
+                type="text"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                className="editaddress-input"
+              />
+            </div>
+            <div className="editaddress-field">
+              <span className="editaddress-label">ที่อยู่:</span>
+              <input
+                type="text"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+                className="editaddress-input"
+              />
+            </div>
+            <div className="editaddress-field">
+              <span className="editaddress-label">ชื่อ-นามสกุล:</span>
+              <input
+                type="text"
+                value={addressName}
+                onChange={(e) => setAddressName(e.target.value)}
+                className="editaddress-input"
+              />
+            </div>
+            <button type="submit" className="editaddress-submit-button">ยืนยัน</button>
+          </form>
+        ) : (
+          <p className="editaddress-noinfo">No address info available.</p>
+        )}
+      </div>
     </div>
   );
 }

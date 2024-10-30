@@ -1,13 +1,31 @@
-// Selectstatus.js
 import React from 'react';
 import { Link } from 'react-router-dom';
+
+// Import รูปภาพ
+import waitIcon from '../img/wait.png';
+import dailIcon from '../img/dail.png';
+import cardailIcon from '../img/cardail.png';
+import refundIcon from '../img/refun.png';
+import paymentIcon from '../img/playment.png';
+import cancelIcon from '../img/cancle.png';
 
 function StatusIcon({ icon, label, linkTo }) {
   return (
     <Link to={linkTo} style={{ textDecoration: 'none', color: 'inherit', textAlign: 'center' }}>
-      <div style={{ cursor: 'pointer', textAlign: 'center' }}>
-        <img src={icon} alt={label} style={{ width: '50px', height: '50px' }} />
-        <p>{label}</p>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          width: '80px',
+          height: '80px',
+          borderRadius: '50%',
+          border: '2px solid #000',
+          marginBottom: '0.5rem'
+        }}>
+          <img src={icon} alt={label} style={{ width: '40px', height: '40px' }} />
+        </div>
+        <p style={{ fontSize: '0.875rem', color: 'black', textAlign: 'center' }}>{label}</p>
       </div>
     </Link>
   );
@@ -15,13 +33,13 @@ function StatusIcon({ icon, label, linkTo }) {
 
 function Selectstatus() {
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-around', padding: '20px' , color: 'black' }}>
-      <StatusIcon icon="/path/to/icon1.png" label="รอจ่ายเงิน" linkTo="/waitingpayment" />
-      <StatusIcon icon="/path/to/icon2.png" label="ที่ต้องจัดส่ง" linkTo="/delivery" />
-      <StatusIcon icon="/path/to/icon3.png" label="ที่ต้องได้รับ" linkTo="/received" />
-      <StatusIcon icon="/path/to/icon4.png" label="รับเงินคืน" linkTo="/refund" />
-      <StatusIcon icon="/path/to/icon5.png" label="สำเร็จ" linkTo="/complete" />
-      <StatusIcon icon="/path/to/icon6.png" label="ยกเลิก" linkTo="/abrogate" />
+    <div style={{ display: 'flex', justifyContent: 'space-around', padding: '20px', color: 'black' }}>
+      <StatusIcon icon={waitIcon} label="รอจ่ายเงิน" linkTo="/waitingpayment" />
+      <StatusIcon icon={dailIcon} label="ที่ต้องจัดส่ง" linkTo="/delivery" />
+      <StatusIcon icon={cardailIcon} label="ที่ต้องได้รับ" linkTo="/received" />
+      <StatusIcon icon={refundIcon} label="รับเงินคืน" linkTo="/refund" />
+      <StatusIcon icon={paymentIcon} label="สำเร็จ" linkTo="/complete" />
+      <StatusIcon icon={cancelIcon} label="ยกเลิก" linkTo="/abrogate" />
     </div>
   );
 }

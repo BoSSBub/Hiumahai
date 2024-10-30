@@ -16,7 +16,7 @@
   }
   
   .promotion-card {
-    background-color: #FFE7FB; /* Light pink */
+    background-color: #D0D0D5; /* Light pink */
     border-radius: 15px; /* Add more border-radius for a smoother curve */
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
@@ -43,6 +43,9 @@
     font-size: 18px;
     margin: 10px 0;
     color: #000000;
+    background-color: white;
+    max-width: 80%;
+    margin-left: 10%;
   }
   
   .promotion-info p {

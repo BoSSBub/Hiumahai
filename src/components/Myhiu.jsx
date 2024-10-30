@@ -1,8 +1,9 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBoxOpen, faShoppingBag, faCopy } from '@fortawesome/free-solid-svg-icons';
 import './Myhiu.css';
+import addIcon from '../img/add1.png';
+import editIcon from '../img/edit.png';
+import CopyIcon from '../img/copy.png';
 
 function Myhiu() {
     const location = useLocation();
@@ -55,7 +56,7 @@ function Myhiu() {
                                 hiumahai.co.th/nongbosssy
                             </a>
                             <button className="copy-button" onClick={handleCopy}>
-                                <FontAwesomeIcon icon={faCopy} />
+                                <img src={CopyIcon} alt="Copy Icon" className="copy-button" />
                             </button>
                         </div>
                     </div>
@@ -77,7 +78,7 @@ function Myhiu() {
                         <div className="status-count">0</div>
                         <p className="status-label">ที่ต้องจัดส่ง</p>
                     </div>
-                    <div className="status-item" onClick={() => handleStatusClick('/cancelled')}>
+                    <div className="status-item" onClick={() => handleStatusClick('/abrogate')}>
                         <div className="status-count">0</div>
                         <p className="status-label">ที่ถูกยกเลิก</p>
                     </div>
@@ -96,13 +97,13 @@ function Myhiu() {
             <div className="action-section">
                 <button className="action-item" onClick={handleNavigateToAddProduct}> 
                     <div className="action-icon">
-                        <FontAwesomeIcon icon={faBoxOpen} className="iconmyhiu" />
+                        <img src={addIcon} alt="Add Product" className="iconmyhiu" />
                     </div>
                     <p className="action-label">เพิ่มสินค้าใหม่</p>
                 </button>
                 <button className="action-item" onClick={handleNavigateTomanageproduct}>
                     <div className="action-icon">
-                        <FontAwesomeIcon icon={faShoppingBag} className="iconmyhiu" />
+                        <img src={editIcon} alt="Manage Product" className="iconmyhiu" />
                     </div>
                     <p className="action-label">จัดการสินค้า</p>
                 </button>

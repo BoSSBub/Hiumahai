@@ -1,3 +1,246 @@
-.main_Waitingpaymentdetail{
-    color: black;
-}
+h5 {
+    font-size: 1.2em; /* Adjust size as needed */
+    font-weight: bold;
+    color: #476BB3; /* Darker color for contrast */
+    margin-bottom: 10px;
+    padding-left: 15px; /* Align with other elements if necessary */
+  }
+  
+.address-card {
+    background-color: #E0E1F1; /* Light purple background */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 600px;
+    position: relative;
+    margin-left: 25%;
+  }
+  
+  .address-header {
+    display: flex;
+    align-items: center;
+  }
+  
+  .address-icon {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+  }
+  
+  .address-edit-button {
+    color: #D7065D; /* Pink color */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9em;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+  }
+  
+  .address-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .address-name {
+    font-weight: bold;
+    font-size: 1em;
+    margin: 0;
+    color: #333;
+  }
+  
+  .address-details, .address-phone {
+    margin: 4px 0;
+    color: #666;
+    font-size: 0.9em;
+  }
+  .procurement-card {
+    background-color: #E0E1F1;
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 2%;
+  }
+  
+  .merchant-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    margin-left: 18%;
+  }
+  
+  .merchant-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .merchant-name {
+    font-weight: bold;
+    font-size: 1em;
+    color: #333;
+  }
+  
+  .product-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .product-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .product-info {
+    flex-grow: 1;
+  }
+  
+  .product-name {
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+  }
+  
+  .product-select, .product-amount {
+    color: #666;
+    font-size: 0.9em;
+  }
+  
+  .highlight {
+    color: #D7065D; /* Highlight color for options */
+  }
+  
+  .product-price {
+    color: #D7065D;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .pricing-summary {
+    padding-top: 10px;
+  }
+  
+  .pricing-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    color: #666;
+    font-size: 0.9em;
+  }
+  
+  .total-price {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .highlight-total {
+    color: #D7065D; /* Total amount highlight color */
+  }
+/* Divider for the main sections */
+.divider {
+    display: none; /* Hide faint divider lines */
+  }
+  
+  /* Divider-thick for total section */
+  .divider-thick {
+    width: 100%;
+    height: 2px;
+    background-color: #333333;
+    margin: 10px 0;
+    opacity: 0.5;
+  }
+  
+  /* Remove any default borders if necessary */
+  .procurement-card, .merchant-section, .product-section, .pricing-summary {
+    border: none; /* Ensure no border is applied */
+  }
+  
+  /* Remove borders from individual elements if any */
+  .product-section, .pricing-summary, .total-price {
+    border-top: none;
+    border-bottom: none;
+  }
+  .payment-summary-card {
+    display: flex;
+    align-items: center;
+    border: 1px solid #476BB3; /* Blue border color */
+    border-radius: 20px;
+    padding: 10px 15px;
+    max-width: 600px;
+    background-color: #ffffff;
+    margin-top: 1%;
+    margin-left: 26%;
+  }
+  
+  .payment-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .icon-image-payment {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .payment-label {
+    flex-grow: 1;
+    font-weight: bold;
+    color: #476BB3; /* Same blue color */
+    margin: 0;
+  }
+  
+  .payment-amount {
+    font-weight: bold;
+    color: #476BB3;
+    margin: 0;
+  }
+  .button-container {
+    display: flex;
+    gap: 10px; /* Space between the buttons */
+    margin-top: 1%;
+    margin-left: 35%;
+  }
+  
+  .cancel-button-waiting, .pay-button-waiting {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1em;
+    width: 180px;
+  }
+  
+  .cancel-button-waiting {
+    background-color: #D7065D; /* Pink color */
+  }
+  
+  .pay-button-waiting {
+    background-color: #476BB3; /* Blue color */
+  }
+  
+  
+  
+  

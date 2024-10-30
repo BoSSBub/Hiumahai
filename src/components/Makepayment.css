@@ -1,3 +1,191 @@
-.main_Makepayment{
-    color: black;
-}
+.main_Makepayment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .button-section {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+    border: 1px solid #D2D5E3;
+    border-radius: 20px;
+    padding: 5px;
+  }
+  
+  .option-button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #3056D3;
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    cursor: pointer;
+  }
+  
+  .option-button.active {
+    background-color: #F0F1F8;
+    border-radius: 20px;
+  }
+  
+  .option-button .icon {
+    margin-right: 5px;
+  }
+  
+  .payment-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .qr-code-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .qr-code {
+    width: 200px;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .total-price-make {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-top: 10px;
+    background-color: #E0E1F1;
+    padding: 5px 50px;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+  
+  .price {
+    color: #e60023;
+    margin-left: 5px;
+  }
+  
+  .file-input {
+    margin: 10px 0;
+  }
+  
+  .uploaded-image {
+    width: 100px;
+    height: auto;
+    margin-top: 10px;
+  }
+  
+  .cancel-button,
+  .confirm-button {
+    width: 100px;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+  }
+  
+  .cancel-button {
+    background-color: #D7065D;
+    color: white;
+    margin-right: 10px;
+    width: 150px;
+    border-radius: 10px;
+  }
+  
+  .confirm-button {
+    background-color: #476BB3;
+    color: white;
+    width: 150px;
+    border-radius: 10px;
+  }
+  .payment-summary-card-make {
+    display: flex;
+    align-items: center;
+    border: 1px solid #476BB3; /* Blue border color */
+    border-radius: 20px;
+    padding: 10px 15px;
+    max-width: 600px;
+    background-color: #ffffff;
+    margin-top: 1%;
+    width: 500px;
+  }
+  
+  .payment-icon-make {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .icon-image-payment-make {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .payment-label-make {
+    flex-grow: 1;
+    font-weight: bold;
+    color: #476BB3; /* Same blue color */
+    text-align: start;
+  }
+  
+  .payment-amount-make {
+    font-weight: bold;
+    color: #476BB3;
+    margin: 0;
+  }
+  .button-container {
+    display: flex;
+    gap: 10px; /* Space between the buttons */
+    margin-top: 1%;
+    margin-left: 35%;
+  }
+  .upload-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* จัดให้ปุ่มอยู่ตรงกลาง */
+    margin-top: 20px;
+  }
+  
+  .upload-button {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border: 1px solid #476BB3;
+    border-radius: 20px;
+    color: #476BB3;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 300px;
+    justify-content: center; /* จัดให้ข้อความและไอคอนอยู่ตรงกลางภายในปุ่ม */
+  }
+  
+  .upload-button .icon-image {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+  
+  .file-input {
+    display: none;
+  }
+  
+  .uploaded-image {
+    margin-top: 16px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  

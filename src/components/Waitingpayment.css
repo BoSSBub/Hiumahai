@@ -1,3 +1,74 @@
-.main_Waitingpayment{
-    color: black;
+.main-waitingpayment {
+    padding: 20px;
+}
+
+.procurement-list-waitingpayment {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.procurement-item-waitingpayment {
+    display: flex;
+    align-items: center;
+    background-color: #E0E1F1;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 75%;
+    align-items: center;
+    margin-left: 10%;
+    height: 120px;
+}
+
+.product-image-waitingpayment {
+    width: 200px;
+    height: 120px;
+    border-radius: 10px;
+    margin-right: 15px;
+    object-fit: cover;
+    margin-left: 10%;
+}
+
+.product-info-waitingpayment {
+    flex-grow: 1;
+}
+
+.product-name-waitingpayment {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 12%;
+}
+
+.action-container-waitingpayment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.payment-button-waitingpayment {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+}
+
+.product-status-waitingpayment {
+    font-size: 0.875rem;
+    color: #666;
+    margin-top: 5px; /* เพิ่มระยะห่างระหว่างปุ่มและข้อความ */
+}
+
+.payment-button-waitingpayment:hover {
+    color: #000;
+}
+
+.loading-waitingpayment, .error-waitingpayment, .no-details-waitingpayment {
+    text-align: center;
+    font-size: 1rem;
+    color: #666;
 }

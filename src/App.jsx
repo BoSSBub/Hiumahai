@@ -43,6 +43,7 @@ import Received from './components/Received';
 import Receiveddetail from './components/Receiveddetail';
 import Complete from './components/Complete';
 import Completedetail from './components/Completedetail';
+import Reviews from './components/Reviews';
 
 function App() {
   return (
@@ -73,6 +74,7 @@ function App() {
           <Route path="/allhiu" element={<Allhiu/>} />
           <Route path="/allhiubrands" element={<Allhiubrand/>} />
           <Route path="/addproduct" element={<Addproduct/>} />
+          <Route path="/reviews" element={<Reviews/>} />
           <Route path="/product/:productId" element={<ProductDetail />} /> {/* Corrected here */}
           <Route path="/nomember" element={<Nomember />} />
           <Route path="/register-seller" element={<RegisterSeller />} />

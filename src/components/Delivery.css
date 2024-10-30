@@ -1,14 +1,14 @@
-.main-abrogate {
+.main-delivery {
     padding: 20px;
 }
 
-.procurement-list-abrogate {
+.procurement-list-delivery {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-.procurement-item-abrogate {
+.procurement-item-delivery {
     display: flex;
     align-items: center;
     background-color: #E0E1F1;
@@ -22,7 +22,7 @@
     height: 120px;
 }
 
-.product-image-abrogate {
+.product-image-delivery {
     width: 200px;
     height: 120px;
     border-radius: 10px;
@@ -31,11 +31,11 @@
     margin-left: 10%;
 }
 
-.product-info-abrogate {
+.product-info-delivery {
     flex-grow: 1;
 }
 
-.product-name-abrogate {
+.product-name-delivery {
     font-size: 1rem;
     font-weight: 500;
     color: #333;
@@ -43,13 +43,13 @@
     margin-bottom: 12%;
 }
 
-.action-container-abrogate {
+.action-container-delivery {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.action-button-abrogate {
+.payment-button-delivery {
     background: none;
     border: none;
     font-size: 1.5rem;
@@ -57,17 +57,17 @@
     cursor: pointer;
 }
 
-.product-status-abrogate {
+.product-status-delivery {
     font-size: 0.875rem;
     color: #666;
     margin-top: 5px; /* เพิ่มระยะห่างระหว่างปุ่มและข้อความ */
 }
 
-.action-button-abrogate:hover {
+.payment-button-delivery:hover {
     color: #000;
 }
 
-.loading-abrogate, .error-abrogate, .no-details-abrogate {
+.loading-delivery, .error-delivery, .no-details-delivery {
     text-align: center;
     font-size: 1rem;
     color: #666;
